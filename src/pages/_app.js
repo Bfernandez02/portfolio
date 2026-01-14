@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/components/ThemeProvider';
 import '@/styles/globals.css';
-import DesktopNav from '@/components/DesktopNav';
+import DesktopNav from '@/components/Navbar/DesktopNav';
 import { ThemeButton } from '@/components/ThemeButton';
 
 function App({ Component, pageProps }) {
