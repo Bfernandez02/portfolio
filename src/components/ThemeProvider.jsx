@@ -12,15 +12,15 @@ export function ThemeProvider({ children }) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
-    
-    // Apply theme directly to DOM without setState
+
+    // Apply theme directly to DOM
     const root = document.documentElement;
     if (initialTheme === 'dark') {
       root.setAttribute('data-theme', 'dark');
     } else {
       root.removeAttribute('data-theme');
     }
-    
+
     setTheme(initialTheme);
     setMounted(true);
   }, []);
@@ -41,11 +41,9 @@ export function ThemeProvider({ children }) {
     applyTheme(newTheme);
   };
 
-  if (!mounted) return <>{children}</>;
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      {mounted ? children : null}
     </ThemeContext.Provider>
   );
 }

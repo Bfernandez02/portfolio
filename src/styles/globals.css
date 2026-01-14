@@ -13,7 +13,7 @@
 /* Light Mode (Default) */
 :root {
   --color-primary: #0d3b64;
-  --color-secondary: #ee964b;
+  --color-secondary: rgba(22, 22, 21, 0.4);
   --color-accent: #ffb43a;
   --color-background: #fff9e0;
   --color-black: #000000;
@@ -24,7 +24,7 @@
 /* Dark Mode */
 [data-theme="dark"] {
   --color-primary: #e0e0e0;
-  --color-secondary: #bb6b3a;
+  --color-secondary: #0d3b64;
   --color-accent: #cc8c2a;
   --color-background: #1a1a1a;
   --color-black: #ffffff;
