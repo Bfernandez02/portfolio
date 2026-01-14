@@ -12,8 +12,6 @@ export function ThemeProvider({ children }) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
-
-    // Apply theme directly to DOM
     const root = document.documentElement;
     if (initialTheme === 'dark') {
       root.setAttribute('data-theme', 'dark');
