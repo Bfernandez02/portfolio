@@ -4,28 +4,17 @@
 @theme {
   --color-background: #f4f4f4;
   --color-primary: #284b63;
-  --color-text: #161616;
+  --color-secondary: #161616;
   --color-accent: #ca054d;
   --color-popup: #fbfbfb;
   --color-border: #d4d4d4;
-}
-
-/* Light Mode (Default) */
-:root {
-  --color-background: #f4f4f4;
-  --color-primary: #284b63;
-  --color-text: #161616;
-  --color-accent: #ca054d;
-  --color-popup: #fbfbfb;
-  --color-border: #d4d4d4;
-  color-scheme: light;
 }
 
 /* Dark Mode */
 [data-theme="dark"] {
   --color-background: #161616;
   --color-primary: #7a83e6;
-  --color-text: #f4f4f4;
+  --color-secondary: #f4f4f4;
   --color-accent: #ca054d;
   --color-popup: #1e1e1e;
   --color-border: #282a36;
@@ -33,10 +22,11 @@
 }
 
 body {
-  color: var(--color-black);
   background: var(--color-background);
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 h1,
@@ -46,12 +36,11 @@ h4,
 h5,
 h6 {
   font-family: "Lora", serif;
-  color: var(--color-black);
 }
 
 p {
-  color: var(--color-black);
   font-size: 16px;
+  color: var(--color-secondary);
   font-family: "Poppins", sans-serif;
 }
 
@@ -62,7 +51,6 @@ ol {
   padding-left: 1.5rem; /* 24px */
   margin-top: 0.5rem; /* 8px */
   margin-bottom: 0.5rem; /* 8px */
-  color: var(--color-black);
 }
 
 input {

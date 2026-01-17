@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export default function Home() {
   return (
-    <div className="bg-primary">
+    <div className=" text-secondary h-[2000px] flex items-center justify-center p-10">
       TEST 
     </div>
   );
