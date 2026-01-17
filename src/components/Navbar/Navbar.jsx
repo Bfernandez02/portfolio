@@ -5,7 +5,7 @@ import menuItems from "./menuItems.js";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="fixed top-0 z-100 w-full ">
       <div className="hidden lg:flex">
         <DesktopNav menuItems={menuItems} />
       </div>
