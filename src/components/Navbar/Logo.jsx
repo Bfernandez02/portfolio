@@ -17,7 +17,7 @@ export default function Logo({ width, height, version }) {
   return (
     <Link href="/" className={`flex items-center fit justify-center`}>
       <img
-        className="flex items-center fit justify-center min-h-[100px] min-w-[200px] transition-all"
+        className="flex items-center fit justify-center  transition-all"
         src={logo}
         alt="Logo"
         width={width}

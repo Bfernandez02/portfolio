@@ -26,27 +26,27 @@ export default function DesktopNav({ menuItems }) {
   return (
     <>
       <div
-        className={`fixed top-0 z-[900] w-full max-lg:hidden  ${
+        className={`z-900 w-full max-lg:hidden  ${
           scrolled ? "p-0" : "p-8"
         } transition-all`}
       >
         <div
-          className={` flex lex-row transition-all justify-between border-y-2 border-border px-[20px] ${
+          className={` flex lex-row transition-all justify-between border-y-2 border-border px-5 py-6 ${
             scrolled
-              ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary"} border-b-[1px]  px-[80px]`
-              : "mx-[80px]"
+              ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary"} border-b  px-20`
+              : "mx-20"
           }`}
         >
-          <div className="w-[220px]">
+          <div className="w-55">
             <Logo version={scrolled ? "dark" : "light"} />
           </div>
           <div className="flex items-center justify-between w-fit">
-            <div className="flex gap-10 w-full justify-center items-center">
+            <div className="flex xl:gap-8 gap-6 w-full justify-center items-center">
               {menuItems.map((item, index) => {
                 return (
                   <div className="flex w-fit" key={index}>
                     <Link
-                      className="flex w-fit gap-2 align-middle items-center text-[20px] transition-all hover:border-b-[1px] border-secondary duration-200"
+                      className="flex w-fit gap-2 align-middle items-center transition-all hover:border-b border-secondary duration-200"
                       href={item.route}
                     >
                       <h5
