@@ -35,13 +35,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lora", serif;
+  font-family: "Playfair Display", serif;
 }
 
 p {
   font-size: 16px;
   color: var(--color-secondary);
   font-family: "Poppins", sans-serif;
+}
+
+button, select {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 ul,
@@ -190,6 +195,9 @@ h6 {
 
 @layer utilities {
   .btn {
-    @apply bg-primary font-semibold text-white px-3 py-2 lg:px-4 rounded-[10px] hover:bg-primary transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
+    @apply bg-primary font-semibold text-white px-3 py-2 lg:px-4 rounded-[10px] hover:bg-accent transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
+  }
+  .btn-accent {
+    @apply bg-accent font-semibold text-white px-3 py-2 lg:px-4 rounded-[10px] hover:bg-[#1282A2] transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
   }
 }

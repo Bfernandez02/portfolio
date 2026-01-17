@@ -46,11 +46,11 @@ export default function DesktopNav({ menuItems }) {
                 return (
                   <div className="flex w-fit" key={index}>
                     <Link
-                      className="flex w-fit gap-2 align-middle items-center transition-all hover:border-b border-secondary duration-200"
+                      className="flex w-fit gap-2 align-middle items-center "
                       href={item.route}
                     >
                       <h5
-                        className={scrolled ? "text-white" : "text-secondary"}
+                        className={`transition-all hover:border-b duration-200 ${scrolled ? "text-white border-white" : "text-secondary border-secondary"}`}
                       >
                         {item.label}
                       </h5>
@@ -61,11 +61,12 @@ export default function DesktopNav({ menuItems }) {
             </div>
           </div>
           <div className="flex items-center justify-between w-fit gap-4">
-            <button
-              className={`btn ${theme !== "dark" && scrolled ? "bg-accent!" : ""} `}
+            <Link
+              href="#contact"
+              className={` ${theme !== "dark" && scrolled ? "btn-accent" : "btn"} `}
             >
               Contact
-            </button>
+            </Link>
             <ThemeButton textColor={scrolled ? "white" : null} />
           </div>
         </div>

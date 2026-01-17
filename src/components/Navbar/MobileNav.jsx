@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ThemeButton } from "../ThemeButton";
 import { useTheme } from "../ThemeProvider";
 import Hamburger from "hamburger-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MobileNav({ menuItems }) {
   const { theme, toggleTheme } = useTheme();
@@ -25,7 +26,12 @@ export default function MobileNav({ menuItems }) {
     };
   }, []);
 
-  let hamburgerColor = theme === "dark" ? "#FFFFFF" : scrolled && !isMenuOpen ? "white" : "#284b63";
+  let hamburgerColor =
+    theme === "dark"
+      ? "#FFFFFF"
+      : scrolled && !isMenuOpen
+        ? "white"
+        : "#284b63";
 
   return (
     <div className="relative z-[1000] overflow-hidden text-center flex justify-end ">
@@ -67,39 +73,31 @@ export default function MobileNav({ menuItems }) {
         }}
       >
         <div
-          className="flex h-[100px] justify-between px-8 pt-6 max-[400px]:p-1"
+          className="flex h-25 justify-between px-8 pt-6 max-[400px]:p-1"
           onClick={() => setIsMenuOpen(false)}
         >
           <Logo version={"horizontal"} width={180} height={80} />
         </div>
 
         <div className="flex flex-col justify-between max-[400px]:p-1 overflow-y-auto overflow-x-hidden p-5 pt-[50px] ml-12">
-          <div
-            className={`flex w-full max-w-[500px] list-none flex-col gap-y-8`}
-          >
+          <div className={`flex w-full max-w-125 list-none flex-col gap-y-8`}>
             {menuItems.map((menuLink) => {
               return (
                 <Link
                   key={menuLink.label}
                   href={menuLink.route}
-                  onClick={() => {
-                    menuLink.label === "Search"
-                      ? setOpenSearch(true)
-                      : toggleMenu();
-                  }}
-                  className={`flex text-center w-fit text-secondary h-fit  transition-all`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex text-center w-fit text-secondary h-fit  transition-all items-center hover:text-accent duration-200`}
                 >
+                  <FontAwesomeIcon icon={menuLink.icon} className="mr-4" />
                   <h5 className=" w-fit">{menuLink.label}</h5>
                 </Link>
               );
             })}
-
-            <div className="flex items-center justify-between w-fit gap-4">
-              <button
-                className={`btn `}
-              >
-                Contact
-              </button>
+          </div>
+          <div>
+            <div className="flex items-center justify-between w-fit gap-4 mt-10">
+              <Link href="#contact" className={`btn `} onClick={() => setIsMenuOpen(false)}>Contact</Link>
               <ThemeButton />
             </div>
           </div>
