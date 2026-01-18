@@ -17,7 +17,7 @@ import BrandsCarousel from "./BrandsCarousel.jsx";
 
 export default function Hero() {
   return (
-    <div className="p-10 flex flex-col md:flex-row gap-10 items-center md:items-start">
+    <div className="p-10 flex flex-col md:flex-row gap-10 items-center md:items-start w-full">
       <div className="px-5">
         <Image
           src="/headshot.jpg"
@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-full">
         <div>
           <h5>Hi, I am </h5>
           <h1 className="text-4xl text-primary font-bold text-start">
@@ -57,7 +57,7 @@ export default function Hero() {
             <FontAwesomeIcon icon={faDownload} /> Download Resume
           </button>
         </div>
-        <div className="w-full bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
+        <div className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full">
           <h5>Main Technologies</h5>
           <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
             {techList.map((tech, index) => (
@@ -75,17 +75,8 @@ export default function Hero() {
 
         <div className="w-full bg-border rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
           <h5>Brands I have worked with</h5>
-          <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
-            {techList.map((tech, index) => (
-              <TechIcon
-                key={index}
-                tech={tech}
-                width={40}
-                height={40}
-                textSize="18px"
-                vertical={true}
-              />
-            ))}
+          <div className="mt-2 w-full">
+            <BrandsCarousel />
           </div>
         </div>
       </div>
