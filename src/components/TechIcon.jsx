@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function TechIcon({
   tech,
-  width = 50,
-  height = 50,
+  width = "w-[50px]",
+  height = "h-[50px]",
   vertical = false,
-  textSize = "text-[14px] md:text-[16px]",
+  textSize = "text-[14px]! md:text-[16px]!",
 }) {
   return (
     <div>
@@ -15,9 +15,10 @@ export default function TechIcon({
       >
         <Image
           src={`/TechLogos/${tech}.png`}
-          width={width}
-          height={height}
+          width={100}
+          height={100}
           alt="Tech Icon"
+          className={`object-contain ${`${width} ${height}`}`}
         />
       </div>
       <p className={`${textSize} text-center`}>

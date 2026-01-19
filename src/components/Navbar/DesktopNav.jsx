@@ -27,14 +27,14 @@ export default function DesktopNav({ menuItems }) {
     <>
       <div
         className={`z-900 w-full max-lg:hidden  ${
-          scrolled ? "p-0" : "p-8"
+          scrolled ? "p-0" : "p-7"
         } transition-all`}
       >
         <div
-          className={` flex lex-row transition-all justify-between border-y-2 border-border px-5 py-6 ${
+          className={` flex flex-row transition-all justify-between border-y-2 border-border px-5 py-6 ${
             scrolled
-              ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary"} border-b  px-20`
-              : "mx-20"
+              ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary"} border-b  px-10`
+              : "mx-10"
           }`}
         >
           <div className="w-55">

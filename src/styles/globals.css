@@ -91,11 +91,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25rem; /* 20px */
+  font-size: 20px; /* 20px */
 }
 
 h6 {
-  font-size: 1.125rem; /* 18px */
+  font-size: 18px;
 }
 
 @media (min-width: 768px) {
@@ -116,11 +116,11 @@ h6 {
   }
 
   h5 {
-    font-size: 1.25rem;
+    font-size: 20px;
   }
 
   h6 {
-    font-size: 1.125rem;
+    font-size: 18px;
   }
 
   p {
@@ -151,11 +151,11 @@ h6 {
   }
 
   h5 {
-    font-size: 1.35rem;
+    font-size: 22px;
   }
 
   h6 {
-    font-size: 1.25rem;
+    font-size: 18px;
   }
 
   .gradient-border {
@@ -185,11 +185,11 @@ h6 {
   }
 
   h5 {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   h6 {
-    font-size: 1.25rem; /* 24px */
+    font-size: 20px;
   }
 }
 
