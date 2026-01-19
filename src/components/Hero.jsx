@@ -73,7 +73,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-full bg-border rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
+        <div className="w-full bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
           <h5>Brands I have worked with</h5>
           <div className="mt-2 w-full">
             <BrandsCarousel />

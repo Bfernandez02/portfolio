@@ -26,7 +26,7 @@ export default function BrandsCarousel() {
       >
         <div className="flex">
           {repeated.map((brand, idx) => (
-            <div key={idx} className="flex-none px-4 sm:px-6">
+            <div key={idx} className="flex-none px-2 sm:px-4">
               <a
                 href={brand?.url || "#"}
                 target="_blank"
@@ -35,7 +35,7 @@ export default function BrandsCarousel() {
                 <img
                   src={brand?.logo}
                   alt={`Brand logo ${idx}`}
-                  className="h-14 max-h-10 w-30 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  className="h-12 w-26 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
                 />
               </a>
             </div>

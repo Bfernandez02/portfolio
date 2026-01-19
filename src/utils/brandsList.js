@@ -1,27 +1,35 @@
 const brands = [
   {
-    logo: "/brands/apple.png",
-    url: 'https://www.apple.com',
+    logo: "/brands/Civiconnect.png",
+    url: 'https://www.civiconnect.ca',
   },
   {
-    logo: "/brands/cc.png",
-    url: 'https://www.cc.com',
+    logo: "/brands/NurseRecruit.png",
+    url: 'https://www.nurserecruit.ca',
   },
   {
-    logo: "/brands/ford.png",
-    url: 'https://www.ford.com',
+    logo: "/brands/Foods4u.png",
+    url: 'https://www.foods4u.ca',
   },
   {
-    logo: "/brands/nike.png",
-    url: 'https://www.nike.com',
+    logo: "/brands/ArtLivesHere.png",
+    url: 'https://www.artliveshere.ca',
   },
   {
-    logo: "/brands/mcd.png",
-    url: 'https://www.mcdonalds.com',
+    logo: "/brands/SynodIntellicare.png",
+    url: 'https://www.synodintellicare.com',
   },
   {
-    logo: "/brands/sb.png",
-    url: 'https://www.sony.com',
+    logo: "/brands/CurlyLifestyles.png",
+    url: 'https://www.curlylifestyles.ca',
   },
+  {
+    logo: "/brands/GrimsbyBIA.png",
+    url: 'https://grimsbydowntown.com',
+  },
+  {
+    logo: "/brands/Formastack.png",
+    url: 'https://www.formastack.ca',
+  }
 ]
 export default brands;
