@@ -15,12 +15,16 @@ import techList from "../../utils/techList.js";
 import TechIcon from "../TechIcon.jsx";
 import BrandsCarousel from "../BrandsCarousel.jsx";
 import HeroText from "./HeroText.jsx";
+import HeroStats from "./HeroStats.jsx";
 
 export default function DesktopHero() {
   return (
     <div className="lg:mt-50 mt-36 flex flex-col md:flex-row gap-4 lg:gap-14 items-center md:items-start w-full">
-      <div className="px-5 w-[50%]">
+      <div className="px-5 w-[50%] h-full flex flex-col justify-between">
         <HeroText />
+        <div className="mt-8 h-fit w-full">
+          <HeroStats />
+        </div>
       </div>
       <div className="flex flex-col gap-8 w-[50%]">
         <div className="w-full flex">
@@ -57,12 +61,36 @@ export default function DesktopHero() {
             </div>
           </div>
           <div className="grid grid-cols-2 xl:grid-cols-3 w-[30%] gap-2 text-primary h-full">
-            <SocialMediaIcon icon={faSquareLinkedin} url="" textSize="text-[40px] xl:text-[52px]" />
-            <SocialMediaIcon icon={faSquareFigma} url="" textSize="text-[40px] xl:text-[52px]" />
-            <SocialMediaIcon icon={faSquareGithub} url="" textSize="text-[40px] xl:text-[52px]" />
-            <SocialMediaIcon icon={faSquareInstagram} url="" textSize="text-[40px] xl:text-[52px]" />
-            <SocialMediaIcon icon={faSquareFacebook} url="" textSize="text-[40px] xl:text-[52px]" />
-            <SocialMediaIcon icon={faSquareEnvelope} url="" textSize="text-[40px] xl:text-[52px]" />
+            <SocialMediaIcon
+              icon={faSquareLinkedin}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
+            <SocialMediaIcon
+              icon={faSquareFigma}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
+            <SocialMediaIcon
+              icon={faSquareGithub}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
+            <SocialMediaIcon
+              icon={faSquareInstagram}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
+            <SocialMediaIcon
+              icon={faSquareFacebook}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
+            <SocialMediaIcon
+              icon={faSquareEnvelope}
+              url=""
+              textSize="text-[40px] xl:text-[52px]"
+            />
           </div>
         </div>
       </div>
