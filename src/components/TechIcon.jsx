@@ -6,7 +6,7 @@ export default function TechIcon({
   width = 50,
   height = 50,
   vertical = false,
-  textSize = "text-[14px] md:text-[16px]",
+  textSize = "text-[14px]! md:text-[16px]!",
 }) {
   return (
     <div>
@@ -20,7 +20,7 @@ export default function TechIcon({
           alt="Tech Icon"
         />
       </div>
-      <p className={`${textSize} text-center`}>
+      <p className={`text-[${textSize}]! text-center`}>
         {tech}
       </p>
     </div>

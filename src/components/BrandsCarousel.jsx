@@ -35,7 +35,7 @@ export default function BrandsCarousel() {
                 <img
                   src={brand?.logo}
                   alt={`Brand logo ${idx}`}
-                  className="h-12 w-26 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  className="h-10 w-26 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
                 />
               </a>
             </div>

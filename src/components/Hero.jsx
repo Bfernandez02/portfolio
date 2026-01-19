@@ -24,7 +24,7 @@ export default function Hero() {
           alt="Hero Image"
           width={1920}
           height={1080}
-          className="w-full h-auto rounded-[10px] max-w-[300px]"
+          className="w-full h-auto rounded-[10px] max-w-[270px]"
         />
         <div>
           <div className="flex w-full justify-between mt-4 text-4xl text-primary">
@@ -37,28 +37,28 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 w-full">
-        <div>
-          <h5>Hi, I am </h5>
-          <h1 className="text-4xl text-primary font-bold text-start">
+      <div className="flex flex-col gap-8 w-full">
+        <div className="flex flex-col gap-3">
+          <h6>Hi, I am </h6>
+          <h1 className="!text-[24px] text-primary font-bold text-start">
             Brandon Fernandez
           </h1>
-          <h5>
+          <h6>
             Web Development Specialist and Software Developer based in Ontario
-          </h5>
-          <p className="text-start mt-2 text-lg text-gray-600">
+          </h6>
+          <p className="text-start mt-2 !text-[14px] md:text-[16px] text-gray-600">
             Explore my collection of professional work, AI experiments, and
             personal projects that showcase my passion for computer science and
             software development.
           </p>
 
-          <button className="btn mt-2">
+          <button className="btn w-fit mt-2">
             {" "}
             <FontAwesomeIcon icon={faDownload} /> Download Resume
           </button>
         </div>
         <div className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full">
-          <h5>Main Technologies</h5>
+          <h6>Main Technologies</h6>
           <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
             {techList.map((tech, index) => (
               <TechIcon
@@ -66,7 +66,7 @@ export default function Hero() {
                 tech={tech}
                 width={40}
                 height={40}
-                textSize="18px"
+                textSize="14px"
                 vertical={true}
               />
             ))}
@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         <div className="w-full bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
-          <h5>Brands I have worked with</h5>
+          <h6>Brands I have worked with</h6>
           <div className="mt-2 w-full">
             <BrandsCarousel />
           </div>
