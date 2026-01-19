@@ -10,14 +10,15 @@ import {
   faSquareFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
-import SocialMediaIcon from "./SocialMediaIcon.jsx";
-import techList from "../utils/techList.js";
-import TechIcon from "./TechIcon.jsx";
-import BrandsCarousel from "./BrandsCarousel.jsx";
+import SocialMediaIcon from "../SocialMediaIcon.jsx";
+import techList from "../../utils/techList.js";
+import TechIcon from "../TechIcon.jsx";
+import BrandsCarousel from "../BrandsCarousel.jsx";
+import HeroText from "./HeroText.jsx";
 
-export default function Hero() {
+export default function MobileHero() {
   return (
-    <div className="p-10 flex flex-col md:flex-row gap-10 items-center md:items-start w-full">
+    <div className="mt-22 py-10 flex flex-col md:flex-row gap-10 items-center md:items-start w-full">
       <div className="px-5">
         <Image
           src="/headshot.jpg"
@@ -38,25 +39,10 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex flex-col gap-8 w-full">
-        <div className="flex flex-col gap-3">
-          <h6>Hi, I am </h6>
-          <h1 className="!text-[24px] text-primary font-bold text-start">
-            Brandon Fernandez
-          </h1>
-          <h6>
-            Web Development Specialist and Software Developer based in Ontario
-          </h6>
-          <p className="text-start mt-2 !text-[14px] md:text-[16px] text-gray-600">
-            Explore my collection of professional work, AI experiments, and
-            personal projects that showcase my passion for computer science and
-            software development.
-          </p>
-
-          <button className="btn w-fit mt-2">
-            {" "}
-            <FontAwesomeIcon icon={faDownload} /> Download Resume
-          </button>
+        <div className="w-full">
+          <HeroText />
         </div>
+
         <div className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full">
           <h6>Main Technologies</h6>
           <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
@@ -64,9 +50,9 @@ export default function Hero() {
               <TechIcon
                 key={index}
                 tech={tech}
-                width={40}
-                height={40}
-                textSize="14px"
+                width={"w-[28px]"}
+                height={"h-[28px]"}
+                textSize="text-[12px]!"
                 vertical={true}
               />
             ))}

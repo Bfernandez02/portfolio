@@ -26,7 +26,7 @@ export default function BrandsCarousel() {
       >
         <div className="flex">
           {repeated.map((brand, idx) => (
-            <div key={idx} className="flex-none px-2 sm:px-4">
+            <div key={idx} className="flex-none px-2 lg:px-3">
               <a
                 href={brand?.url || "#"}
                 target="_blank"
