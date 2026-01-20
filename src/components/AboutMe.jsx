@@ -7,14 +7,14 @@ import { useTheme } from "./ThemeProvider";
 export default function AboutMe() {
     const { theme } = useTheme();
   return (
-    <div className="w-fit rounded-[10px] flex flex-col md:flex-row justify-between border-border border-2 lg:px-15 lg:py-10 px-5 py-5 max-md:items-center gap-10 md:gap-20">
+    <div className="w-fit flex flex-col md:flex-row justify-between lg:py-10 py-5 max-md:items-center gap-10 md:gap-20 lg:gap-30 items-center">
       <div className="w-fit">
         <Image
           src={`/Brandon_${theme}.png`}
           alt="About Me Image"
           width={600}
           height={600}
-          className="w-full h-auto rounded-[10px] md:max-w-[500px] max-w-[250px]"
+          className="w-full h-auto rounded-[10px] md:max-w-[450px] max-w-[200px]"
         />
       </div>
 
@@ -40,7 +40,7 @@ export default function AboutMe() {
         </div>
 
         <p className="max-xl:text-[14px]!">
-          Hello! I'm Brandon, a passionate software developer with a knack for
+          Hello! I&apos;m Brandon, a passionate software developer with a knack for
           creating dynamic and user-friendly web applications. With a strong
           foundation in both front-end and back-end technologies, I thrive on
           transforming ideas into functional digital experiences.
