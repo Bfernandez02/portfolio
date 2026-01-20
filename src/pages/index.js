@@ -6,8 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import AboutMe from "@/components/AboutMe";
 import { useRef } from "react";
+import Experience from "@/components/Experience";
+
 export default function Home() {
   const scrollRef = useRef(null);
+  const experienceRef = useRef(null);
+
   const handleScrollToRef = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView({ behavior: "smooth" });
@@ -15,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div className=" text-secondary flex items-center justify-center px-10 lg:px-30 flex-col w-full ">
+    <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
       {/* Hero Section */}
       <div className=" min-h-screen flex flex-col items-center justify-between w-full">
         <div className="hidden md:block w-full">
@@ -40,8 +44,12 @@ export default function Home() {
       </div>
 
       {/* About Me Section */}
-      <div ref={scrollRef} className="w-full py-20">
+      <div ref={scrollRef} className="w-full pt-20">
         <AboutMe />
+      </div>
+
+      <div ref={experienceRef} className="w-full py-20">
+        <Experience />
       </div>
     </div>
   );
