@@ -40,7 +40,7 @@ export default function AboutMe() {
         </div>
 
         <p className="max-xl:text-[14px]!">
-          Hello! I'm Brandon, a passionate software developer with a knack for
+          Hello! I&apos;m Brandon, a passionate software developer with a knack for
           creating dynamic and user-friendly web applications. With a strong
           foundation in both front-end and back-end technologies, I thrive on
           transforming ideas into functional digital experiences.
