@@ -8,13 +8,13 @@ export default function Experience() {
   return (
     <div className="w-full flex flex-col gap-10">
       {/* Experience Header */}
-      <div className="w-full flex-col md:flex-row gap-2 md:gap-0 justify-between">
-        <div className="flex flex-col gap-2 ">
+      <div className="w-full flex flex-col md:flex-row gap-2 md:gap-[20%] justify-between items-center">
+        <div className="flex flex-col gap-2 w-full">
           <h5 className="list-item list-inside">Experience</h5>
           <h2>Explore my development journey</h2>
         </div>
 
-        <div>
+        <div className="w-full">
           <p className="hidden md:block max-w-3xl">
             Over the years, I&apos;ve had the privilege of working on a diverse
             range of projects that have honed my skills and expanded my
@@ -27,7 +27,7 @@ export default function Experience() {
       </div>
 
       {/* Experience Items */}
-      <div className="flex flex-col gap-4 md:gap-8">
+      <div className="flex flex-col gap-4 md:gap-8 lg:mt-10 md:mt-8 lg:gap-12">
         {experienceList.map((item, index) => (
           <div key={index} className={`${index !== experienceList.length - 1 ? "border-b-border border-b-2 pb-4 md:pb-8" : ""}`}>
             <ExperienceCard experienceItem={item} />

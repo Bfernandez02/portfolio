@@ -55,7 +55,7 @@ export default function DesktopHero() {
         </div>
         <div className="w-full flex-row xl:gap-6 gap-4 flex">
           <div className="w-[70%] bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4 ">
-            <h6>Brands I have worked with</h6>
+            <h6 className="text-white!">Brands I have worked with</h6>
             <div className="mt-2 ">
               <BrandsCarousel />
             </div>

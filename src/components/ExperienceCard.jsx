@@ -2,17 +2,19 @@ import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "./ThemeProvider";
 
 export default function ExperienceCard({ experienceItem }) {
+  const { theme } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div>
       <div className="w-full justify-between flex flex-row items-start gap-2">
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between md:gap-12 lg:gap-20 w-full">
           <div className="flex flex-col">
-            <h4>
+            <h5>
               {experienceItem.role} | {experienceItem.company}
-            </h4>
+            </h5>
             <p>
               {experienceItem.duration} | {experienceItem.location}
             </p>
@@ -22,7 +24,7 @@ export default function ExperienceCard({ experienceItem }) {
             {experienceItem.tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-border text-white px-3 py-px md:py-2 rounded-full text-sm"
+                className={`${theme === "dark" ? "bg-border text-white" : "bg-primary"} px-3 py-2 h-fit text-white  rounded-full text-sm flex items-center justify-center`}
               >
                 {tag}
               </span>
@@ -32,7 +34,7 @@ export default function ExperienceCard({ experienceItem }) {
 
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-1 text-accent py-px md:py-2 hover:text-primary transition-colors duration-300"
+          className="flex items-center gap-1 text-accent mt-px md:mt-5 hover:text-primary transition-colors duration-300 h-fit"
         >
           <FontAwesomeIcon
             icon={faChevronDown}
