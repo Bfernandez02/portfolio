@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SocialMediaIcon from "../SocialMediaIcon.jsx";
-import techList from "../../utils/techList.js";
+import { featuredTechList } from "@/utils/techList.js";
 import TechIcon from "../TechIcon.jsx";
 import BrandsCarousel from "../BrandsCarousel.jsx";
 import HeroText from "./HeroText.jsx";
@@ -46,7 +46,7 @@ export default function MobileHero() {
         <div className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full">
           <h6>Main Technologies</h6>
           <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
-            {techList.map((tech, index) => (
+            {featuredTechList.map((tech, index) => (
               <TechIcon
                 key={index}
                 tech={tech}

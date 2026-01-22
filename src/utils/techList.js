@@ -1,4 +1,4 @@
-const techList = [
+const featuredTechList = [
     "JavaScript",
     "React",
     "Next.js",
@@ -13,4 +13,9 @@ const techList = [
     "Tailwind",
 ];
 
-export default techList;
+const fullTechList = [
+    ...featuredTechList,
+    "Django",
+];
+
+export {fullTechList, featuredTechList};
