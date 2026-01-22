@@ -85,8 +85,7 @@ export default function Home() {
               },
               "alumniOf": {
                 "@type": "EducationalOrganization",
-                "name": "Brock University",
-                "description": "BSc (Honours) in Computer Science Co-op"
+                "name": "Brock University"
               },
               "knowsAbout": [
                 "Web Development",
