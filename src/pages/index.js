@@ -25,7 +25,6 @@ export default function Home() {
       <Head>
         {/* Primary Meta Tags */}
         <title>Brandon Fernandez - Software Developer & Web Development Specialist</title>
-        <meta name="title" content="Brandon Fernandez - Software Developer & Web Development Specialist" />
         <meta 
           name="description" 
           content="Portfolio of Brandon Fernandez, a passionate software developer and web development specialist based in Ontario. Explore professional work, AI experiments, and personal projects showcasing expertise in fullstack development and computer science." 
@@ -34,8 +33,6 @@ export default function Home() {
         <meta name="author" content="Brandon Fernandez" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
-        <meta name="revisit-after" content="7 days" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
