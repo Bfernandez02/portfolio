@@ -11,6 +11,7 @@ import Experience from "@/components/Experience";
 export default function Home() {
   const scrollRef = useRef(null);
   const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
 
   const handleScrollToRef = () => {
     if (scrollRef.current) {
@@ -48,8 +49,14 @@ export default function Home() {
         <AboutMe />
       </div>
 
-      <div ref={experienceRef} className="w-full py-20">
+      {/* Experience Section */}
+      <div ref={experienceRef} className="w-full pt-20">
         <Experience />
+      </div>
+
+      {/* Projects Section */}
+      <div ref={projectsRef} className="w-full pt-20">
+
       </div>
     </div>
   );

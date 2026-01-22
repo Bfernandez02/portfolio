@@ -20,7 +20,7 @@ export default function Experience() {
             range of projects that have honed my skills and expanded my
             expertise.
           </p>
-          <button className="text-[16px] flex items-center gap-2 text-accent border-b-2 border-accent py-[1px] mt-4 md:mt-0 hover:text-primary hover:border-primary transition-colors duration-300">
+          <button className="text-[16px] flex items-center gap-2 text-accent border-b-2 border-accent py-px mt-4 md:mt-0 hover:text-primary hover:border-primary transition-colors duration-300">
             Book a call <FontAwesomeIcon icon={faArrowAltCircleRight} />
           </button>
         </div>
