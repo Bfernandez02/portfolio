@@ -2,12 +2,16 @@ import React from "react";
 import projectCategories from "@/utils/ProjectUtils";
 import { useState } from "react";
 import TechStackMultiSelect from "./TechStackMultiSelect";
+import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
-export default function Projects() {
+export default function Projects({ projects }) {
   const [filters, setFilters] = useState({
     category: "All",
     techStack: null,
   });
+
+  const [activeProject, setActiveProject] = useState(null);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -37,9 +41,33 @@ export default function Projects() {
           ))}
 
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <TechStackMultiSelect value={filters.techStack} onChange={(selected) => setFilters({...filters, techStack: selected})} />
+            <TechStackMultiSelect
+              value={filters.techStack}
+              onChange={(selected) =>
+                setFilters({ ...filters, techStack: selected })
+              }
+            />
           </div>
         </div>
+
+        <>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                onClick={() => setActiveProject(project)}
+              />
+            ))}
+          </div>
+
+          {activeProject && (
+            <ProjectModal
+              project={activeProject}
+              onClose={() => setActiveProject(null)}
+            />
+          )}
+        </>
       </div>
     </div>
   );

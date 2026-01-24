@@ -6,8 +6,9 @@ import AboutMe from "@/components/AboutMe";
 import { useRef, useEffect } from "react";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects/Projects";
+import { getAllProjects } from "@/utils/projectLoader";
 
-export default function Home() {
+export default function Home({ projects }) {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
@@ -73,8 +74,18 @@ export default function Home() {
 
       {/* Projects Section */}
       <div ref={projectsRef} className="w-full pt-20">
-        <Projects />
+        <Projects projects={projects} />
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const projects = getAllProjects();
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }
