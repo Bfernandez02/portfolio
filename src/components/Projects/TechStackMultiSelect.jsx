@@ -19,11 +19,11 @@ export default function TechStackMultiSelect({
       options={techOptions}
       value={value}
       onChange={onChange}
-      placeholder="Filter by tech stack..."
+      placeholder="Filter by tech stack"
       closeMenuOnSelect={false}
       classNamePrefix="select"
       getOptionLabel={(option) => (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 z-60">
           <Image
             src={option.logo}
             alt={option.label}
@@ -45,6 +45,7 @@ export default function TechStackMultiSelect({
           "&:hover": {
             borderColor: "black",
           },
+          zIndex: 60,
         }),
         option: (base, state) => ({
           ...base,

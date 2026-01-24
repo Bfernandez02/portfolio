@@ -1,25 +1,69 @@
+import Image from "next/image";
+import TechCarousel from "./TechCarousel";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+
 export default function ProjectCard({ project, onClick }) {
+  const { title, coverImage, excerpt, tech, github, url } = project;
   return (
     <button
       onClick={onClick}
-      className="text-left border rounded-xl p-5 hover:shadow-lg transition"
+      className="text-left rounded-[10px] hover:scale-103 transition-all duration-300 bg-popup flex flex-col not-even:shadow-md w-full"
     >
-      <img
-        src={project.coverImage}
-        alt={project.title}
-        className="rounded-lg mb-4"
-      />
+      <div className="w-full h-[200px] overflow-hidden rounded-t-[10px] relative">
+        <Image
+          src={coverImage}
+          alt={title}
+          className="rounded-t-[10px] object-cover w-full h-full"
+          width={800}
+          height={800}
+        />
 
-      <h3 className="text-xl font-semibold">{project.title}</h3>
+        <div className="absolute top-2 right-2 flex gap-2 z-50">
+          {url && (
+            <Link
+              href={url}
+              target="_blank"
+              className="btn-accent"
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                window.open(url, "_blank");
+              }}
+            >
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </Link>
+          )}
 
-      <p className="text-gray-600 mt-2">{project.excerpt}</p>
+          {github && (
+            <Link
+              href={github}
+              target="_blank"
+              className="btn-accent"
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                window.open(github, "_blank");
+              }}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </Link>
+          )}
+        </div>
+      </div>
 
-      <div className="flex flex-wrap gap-2 mt-4">
-        {project.tech?.map((t) => (
-          <span key={t} className="text-xs px-2 py-1 bg-gray-100 rounded">
-            {t}
-          </span>
-        ))}
+      <div className="flex flex-col gap-4 p-4 w-full">
+        <h6 className="font-semibold">{title}</h6>
+
+        <p className="">
+          {excerpt.length > 200 ? excerpt.substring(0, 200) + "..." : excerpt}
+        </p>
+
+        <div className="w-full">
+          <TechCarousel tech={tech} />
+        </div>
       </div>
     </button>
   );
