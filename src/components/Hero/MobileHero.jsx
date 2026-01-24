@@ -49,7 +49,7 @@ export default function MobileHero() {
             {featuredTechList.map((tech, index) => (
               <TechIcon
                 key={index}
-                tech={tech}
+                tech={tech.name}
                 width={"w-[28px]"}
                 height={"h-[28px]"}
                 textSize="text-[12px]!"

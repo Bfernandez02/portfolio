@@ -1,4 +1,5 @@
 const projectCategories = [
+    "All",
     "Web Apps",
     "Artificial Intelligence",
     "Software Development",

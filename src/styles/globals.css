@@ -44,7 +44,8 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
-button, select {
+button,
+select {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
@@ -199,5 +200,8 @@ h6 {
   }
   .btn-accent {
     @apply bg-accent font-semibold text-white px-3 py-2 lg:px-4 rounded-[10px] hover:bg-[#1282A2] transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
+  }
+  .btn-alternate {
+    @apply bg-none border-[1px] border-primary font-semibold text-primary px-3 py-2 lg:px-4 rounded-[10px] hover:bg-primary hover:text-white transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
   }
 }

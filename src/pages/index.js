@@ -1,28 +1,46 @@
-import Image from "next/image";
-import Hero from "@/components/Hero/DesktopHero";
 import DesktopHero from "@/components/Hero/DesktopHero";
 import MobileHero from "@/components/Hero/MobileHero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import AboutMe from "@/components/AboutMe";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects/Projects";
+import { getAllProjects } from "@/utils/projectLoader";
 
-export default function Home() {
-  const scrollRef = useRef(null);
+export default function Home({ projects }) {
+  const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
+  const overviewRef = useRef(null);
 
   const handleScrollToRef = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const refs = {
+    overview: overviewRef,
+    about: aboutRef,
+    experience: experienceRef,
+    projects: projectsRef,
+  };
+
+  const hash = window.location.hash.slice(1);
+
+  useEffect(() => {
+    if (hash && refs[hash]) {
+      refs[hash].current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
 
   return (
     <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
       {/* Hero Section */}
-      <div className=" min-h-screen flex flex-col items-center justify-between w-full">
+      <div
+        ref={overviewRef}
+        className=" min-h-screen flex flex-col items-center justify-between w-full"
+      >
         <div className="hidden md:block w-full">
           <DesktopHero />
         </div>
@@ -45,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* About Me Section */}
-      <div ref={scrollRef} className="w-full pt-20">
+      <div ref={aboutRef} className="w-full pt-20">
         <AboutMe />
       </div>
 
@@ -56,8 +74,18 @@ export default function Home() {
 
       {/* Projects Section */}
       <div ref={projectsRef} className="w-full pt-20">
-
+        <Projects projects={projects} />
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const projects = getAllProjects();
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }

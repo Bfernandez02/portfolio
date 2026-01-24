@@ -43,7 +43,7 @@ export default function DesktopHero() {
               {featuredTechList.map((tech, index) => (
                 <TechIcon
                   key={index}
-                  tech={tech}
+                  tech={tech.name}
                   width={"2xl:w-[50px] w-[25px]"}
                   height={"2xl:h-[50px] h-[25px]"}
                   textSize="text-[12px]! 2xl:text-[14px]!"
