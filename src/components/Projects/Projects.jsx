@@ -52,7 +52,7 @@ export default function Projects({ projects }) {
       </div>
 
       <>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-6 mt-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center md:gap-6 gap-4 mt-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.slug}
