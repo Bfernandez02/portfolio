@@ -20,7 +20,8 @@
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-flip-numbers": "^3.0.9"
+    "react-flip-numbers": "^3.0.9",
+    "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

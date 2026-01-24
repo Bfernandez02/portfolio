@@ -1,7 +1,7 @@
 import React from "react";
 import projectCategories from "@/utils/ProjectUtils";
 import { useState } from "react";
-import projectTags from "@/utils/ProjectUtils";
+import TechStackMultiSelect from "./TechStackMultiSelect";
 
 export default function Projects() {
   const [filters, setFilters] = useState({
@@ -35,6 +35,10 @@ export default function Projects() {
               {category}
             </button>
           ))}
+
+          <div className="w-full md:w-1/2 lg:w-1/3">
+            <TechStackMultiSelect value={filters.techStack} onChange={(selected) => setFilters({...filters, techStack: selected})} />
+          </div>
         </div>
       </div>
     </div>
