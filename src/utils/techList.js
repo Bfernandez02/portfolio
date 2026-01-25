@@ -67,7 +67,7 @@ const featuredTechList = [
   },
   {
     name: "Tailwind",
-    experience: 3,
+    experience: 2,
     category: "frontend",
     level: "expert",
   },

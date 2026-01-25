@@ -22,11 +22,11 @@ export default function TechIcon({
           alt="Tech Icon"
           className={`object-contain ${`${width} ${height}`}`}
         />
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           <p className={`${textSize} text-center`}>{tech}</p>
           {experience && (
-            <p className="text-[12px]! 2xl:text-[14px]!">
-              {experience} {experience === 1 ? "year" : "years"}
+            <p className="text-[12px]! text-start">
+              {experience}{experience === 1 ? "+ year" : "+ years"}
             </p>
           )}
         </div>
