@@ -2,55 +2,77 @@ const featuredTechList = [
   {
     name: "JavaScript",
     experience: 3,
+    category: "frontend",
+    level: "expert",
   },
   {
     name: "React",
-    experience: 2,
+    experience: 3,
+    category: "frontend",
+    level: "expert",
   },
   {
     name: "Next.js",
-    experience: 2,
+    experience: 3,
+    category: "frontend",
+    level: "expert",
   },
   {
     name: "Node.js",
     experience: 2,
+    category: "backend",
+    level: "advanced",
   },
   {
     name: "Python",
-    experience: 3,
+    experience: 2,
+    category: "backend",
+    level: "advanced",
   },
   {
     name: "AWS",
     experience: 2,
+    category: "tools",
+    level: "intermediate",
   },
   {
     name: "PostgresSQL",
-    experience: 2,
+    experience: 3,
+    category: "backend",
+    level: "advanced",
   },
   {
     name: "TypeScript",
-    experience: 2,
+    experience: 1,
+    category: "frontend",
+    level: "intermediate",
   },
   {
     name: "GitHub",
-    experience: 2,
+    experience: 4,
+    category: "tools",
+    level: "expert",
   },
   {
     name: "HTML",
     experience: 3,
+    category: "frontend",
+    level: "expert",
   },
   {
     name: "CSS",
     experience: 3,
+    category: "frontend",
+    level: "expert",
   },
   {
     name: "Tailwind",
-    experience: 2,
+    experience: 3,
+    category: "frontend",
+    level: "expert",
   },
 ];
 
-const fullTechList = [
-  ...featuredTechList,
-];
+const fullTechList = [...featuredTechList];
 
 export { fullTechList, featuredTechList };

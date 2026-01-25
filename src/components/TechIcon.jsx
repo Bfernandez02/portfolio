@@ -8,6 +8,7 @@ export default function TechIcon({
   vertical = true,
   textSize = "text-[14px]! md:text-[16px]!",
   className = "",
+  experience = null,
 }) {
   return (
     <div className={`flex flex-col items-center gap-1 ${className} w-fit`}>
@@ -21,7 +22,14 @@ export default function TechIcon({
           alt="Tech Icon"
           className={`object-contain ${`${width} ${height}`}`}
         />
-        <p className={`${textSize} text-center`}>{tech}</p>
+        <div className="flex flex-col items-center">
+          <p className={`${textSize} text-center`}>{tech}</p>
+          {experience && (
+            <p className="text-[12px]! 2xl:text-[14px]!">
+              {experience} {experience === 1 ? "year" : "years"}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

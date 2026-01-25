@@ -19,7 +19,7 @@ import HeroStats from "./HeroStats.jsx";
 
 export default function DesktopHero() {
   return (
-    <div className="lg:mt-50 mt-36 flex flex-col md:flex-row gap-4 lg:gap-14 items-center md:items-start w-full">
+    <div className="lg:mt-44 mt-36 flex flex-col md:flex-row gap-4 lg:gap-14 items-center md:items-start w-full">
       <div className="px-5 w-[50%] h-full flex flex-col justify-between">
         <HeroText />
         <div className="mt-8 h-fit w-full">
@@ -44,8 +44,8 @@ export default function DesktopHero() {
                 <TechIcon
                   key={index}
                   tech={tech.name}
-                  width={"2xl:w-[50px] w-[25px]"}
-                  height={"2xl:h-[50px] h-[25px]"}
+                  width={"2xl:w-[40px] w-[25px]"}
+                  height={"2xl:h-[40px] h-[25px]"}
                   textSize="text-[12px]! 2xl:text-[14px]!"
                   vertical={true}
                 />

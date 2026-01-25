@@ -7,12 +7,14 @@ import { useRef, useEffect } from "react";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects/Projects";
 import { getAllProjects } from "@/utils/projectLoader";
+import SkillsAndTech from "@/components/Skills/SkillsAndTech";
 
 export default function Home({ projects }) {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const overviewRef = useRef(null);
+  const skillsRef = useRef(null);
 
   const handleScrollToRef = () => {
     if (aboutRef.current) {
@@ -24,6 +26,7 @@ export default function Home({ projects }) {
     about: aboutRef,
     experience: experienceRef,
     projects: projectsRef,
+    skills: skillsRef,
   };
 
   const hash = window.location.hash.slice(1);
@@ -50,7 +53,7 @@ export default function Home({ projects }) {
 
         <button
           onClick={handleScrollToRef}
-          className="w-fit flex flex-col items-center justify-between gap-3 mb-6"
+          className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2"
         >
           <h6 className="text-primary">About me</h6>
           <div className="flex justify-center w-fit">
@@ -65,6 +68,11 @@ export default function Home({ projects }) {
       {/* About Me Section */}
       <div ref={aboutRef} className="w-full pt-20">
         <AboutMe />
+      </div>
+
+      {/* Skills and Tech Section */}
+      <div ref={skillsRef} className="w-full pt-20">
+        <SkillsAndTech />
       </div>
 
       {/* Experience Section */}
