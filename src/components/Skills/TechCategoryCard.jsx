@@ -20,11 +20,11 @@ export default function TechCategoryCard({ category, techs }) {
   return (
     <div className="flex-1 bg-popup rounded-[10px] p-6">
       {/* Category Title */}
-      <h5 className="capitalize mb-4 border-b border-white/10 pb-2">
+      <h5 className="capitalize mb-2 border-l border-accent pl-2 flex items-center h-fit">
         {category === "tools" ? "Tools & Others" : category + " Development"}
       </h5>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 border-t border-white/10 pt-4 mt-3">
         {techs.map((tech) => (
           <TechRow key={tech.name} tech={tech} />
         ))}
