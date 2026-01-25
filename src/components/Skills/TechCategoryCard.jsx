@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import TechIcon from "../TechIcon";
+import { useTheme } from "../ThemeProvider";
 
 const levelMap = {
   expert: "100%",
@@ -17,14 +18,16 @@ const levelTagColors = {
 };
 
 export default function TechCategoryCard({ category, techs }) {
+  const { theme } = useTheme();
+
   return (
-    <div className="flex-1 bg-popup rounded-[10px] p-6">
+    <div className={`flex-1 rounded-[10px] p-6 text-white! ${theme === "dark" ? "bg-popup" : "bg-primary"}`}>
       {/* Category Title */}
-      <h5 className="capitalize mb-2 border-l border-accent pl-2 flex items-center h-fit">
+      <h5 className="capitalize mb-2 border-l-2 border-accent pl-2 flex items-center h-fit">
         {category === "tools" ? "Tools & Others" : category + " Development"}
       </h5>
 
-      <div className="flex flex-col gap-5 border-t border-white/10 pt-4 mt-3">
+      <div className="flex flex-col gap-5 border-t-2 border-white/10 pt-4 mt-3">
         {techs.map((tech) => (
           <TechRow key={tech.name} tech={tech} />
         ))}
@@ -65,11 +68,12 @@ function TechRow({ tech }) {
           vertical={false}
           width={"2xl:w-[40px] w-[25px]"}
           height={"2xl:h-[40px] h-[25px]"}
-          textSize="text-[12px]! 2xl:text-[14px]!" 
+          textSize="text-[12px]! 2xl:text-[14px]!"
+          textColor="text-white!"
         />
 
         <p
-          className={`text-[12px]! 2xl:text-[14px]! w-fit h-fit px-2 py-1 rounded-full font-semibold ${levelTagColors[tech.level]}`}
+          className={`text-[12px]! 2xl:text-[14px]! w-fit h-fit px-2 py-1 rounded-full font-semibold text-white! ${levelTagColors[tech.level]}`}
         >
           {tech.level.charAt(0).toUpperCase() + tech.level.slice(1)}
         </p>
