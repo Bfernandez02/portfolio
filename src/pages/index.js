@@ -48,35 +48,31 @@ export default function Home({ projects }) {
           <MobileHero />
         </div>
 
-        <button
-          onClick={handleScrollToRef}
-          className="w-fit flex flex-col items-center justify-between gap-3 mb-6"
-        >
-          <h6 className="text-primary">About me</h6>
-          <div className="flex justify-center w-fit">
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className="text-primary text-2xl animate-bounce"
-            />
+      <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
+        {/* Hero Section */}
+        <div className=" min-h-screen flex flex-col items-center justify-between w-full">
+          <div className="hidden md:block w-full">
+            <DesktopHero />
           </div>
-        </button>
-      </div>
+          <div className="md:hidden w-full">
+            <MobileHero />
+          </div>
 
       {/* About Me Section */}
       <div ref={aboutRef} className="w-full pt-20">
         <AboutMe />
       </div>
 
-      {/* Experience Section */}
-      <div ref={experienceRef} className="w-full pt-20">
-        <Experience />
-      </div>
+        {/* About Me Section */}
+        <div ref={scrollRef} className="w-full pt-20">
+          <AboutMe />
+        </div>
 
       {/* Projects Section */}
       <div ref={projectsRef} className="w-full pt-20">
         <Projects projects={projects} />
       </div>
-    </div>
+    </>
   );
 }
 
