@@ -7,12 +7,15 @@ import { useRef, useEffect } from "react";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects/Projects";
 import { getAllProjects } from "@/utils/projectLoader";
+import SkillsAndTech from "@/components/Skills/SkillsAndTech";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home({ projects }) {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const overviewRef = useRef(null);
+  const skillsRef = useRef(null);
 
   const handleScrollToRef = () => {
     if (aboutRef.current) {
@@ -24,6 +27,7 @@ export default function Home({ projects }) {
     about: aboutRef,
     experience: experienceRef,
     projects: projectsRef,
+    skills: skillsRef,
   };
 
   const hash = window.location.hash.slice(1);
@@ -35,22 +39,14 @@ export default function Home({ projects }) {
   }, [hash]);
 
   return (
-    <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
-      {/* Hero Section */}
-      <div
-        ref={overviewRef}
-        className=" min-h-screen flex flex-col items-center justify-between w-full"
-      >
-        <div className="hidden md:block w-full">
-          <DesktopHero />
-        </div>
-        <div className="md:hidden w-full">
-          <MobileHero />
-        </div>
-
+    <>
+      <SEOHead />
       <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
         {/* Hero Section */}
-        <div className=" min-h-screen flex flex-col items-center justify-between w-full">
+        <div
+          ref={overviewRef}
+          className=" min-h-screen flex flex-col items-center justify-between w-full"
+        >
           <div className="hidden md:block w-full">
             <DesktopHero />
           </div>
@@ -58,19 +54,39 @@ export default function Home({ projects }) {
             <MobileHero />
           </div>
 
-      {/* About Me Section */}
-      <div ref={aboutRef} className="w-full pt-20">
-        <AboutMe />
-      </div>
+          <button
+            onClick={handleScrollToRef}
+            className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2"
+          >
+            <h6 className="text-primary">About me</h6>
+            <div className="flex justify-center w-fit">
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="text-primary text-2xl animate-bounce"
+              />
+            </div>
+          </button>
+        </div>
 
         {/* About Me Section */}
-        <div ref={scrollRef} className="w-full pt-20">
+        <div ref={aboutRef} className="w-full pt-20">
           <AboutMe />
         </div>
 
-      {/* Projects Section */}
-      <div ref={projectsRef} className="w-full pt-20">
-        <Projects projects={projects} />
+        {/* Skills and Tech Section */}
+        <div ref={skillsRef} className="w-full pt-20">
+          <SkillsAndTech />
+        </div>
+
+        {/* Experience Section */}
+        <div ref={experienceRef} className="w-full pt-20">
+          <Experience />
+        </div>
+
+        {/* Projects Section */}
+        <div ref={projectsRef} className="w-full pt-20">
+          <Projects projects={projects} />
+        </div>
       </div>
     </>
   );
