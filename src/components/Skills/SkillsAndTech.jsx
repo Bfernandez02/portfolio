@@ -25,7 +25,7 @@ export default function SkillsAndTech() {
         <h2 className="w-fit">Skills & Technologies</h2>
       </div>
 
-      <div className="w-full flex-row xl:gap-6 gap-4 flex mb-6">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-6 gap-4 mb-6">
         {Object.keys(categories).map((category) => (
           <TechCategoryCard
             key={category}

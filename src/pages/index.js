@@ -38,7 +38,7 @@ export default function Home({ projects }) {
   }, [hash]);
 
   return (
-    <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
+    <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-24 xl:px-30 flex-col w-full ">
       {/* Hero Section */}
       <div
         ref={overviewRef}
