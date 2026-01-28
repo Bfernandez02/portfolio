@@ -22,7 +22,7 @@ export default function SkillsAndTech() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="w-full flex flex-col items-center justify-center gap-5 mb-10 max-w-[80%] text-center">
-        <h2 className="w-fit">Skills & Technologies</h2>
+        <h3 className="w-fit">Skills & Technologies</h3>
       </div>
 
       <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-6 gap-4 mb-6">
