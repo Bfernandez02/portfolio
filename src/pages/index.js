@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects/Projects";
 import { getAllProjects } from "@/utils/projectLoader";
 import SkillsAndTech from "@/components/Skills/SkillsAndTech";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home({ projects }) {
   const aboutRef = useRef(null);
@@ -38,53 +39,56 @@ export default function Home({ projects }) {
   }, [hash]);
 
   return (
-    <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-24 xl:px-30 flex-col w-full ">
-      {/* Hero Section */}
-      <div
-        ref={overviewRef}
-        className=" min-h-screen flex flex-col items-center justify-between w-full"
-      >
-        <div className="hidden md:block w-full">
-          <DesktopHero />
-        </div>
-        <div className="md:hidden w-full">
-          <MobileHero />
-        </div>
-
-        <button
-          onClick={handleScrollToRef}
-          className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2"
+    <>
+      <SEOHead />
+      <div className=" text-secondary flex items-center justify-center px-7 sm:px-10 md:px-15 lg:px-30 flex-col w-full ">
+        {/* Hero Section */}
+        <div
+          ref={overviewRef}
+          className=" min-h-screen flex flex-col items-center justify-between w-full"
         >
-          <h6 className="text-primary">About me</h6>
-          <div className="flex justify-center w-fit">
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className="text-primary text-2xl animate-bounce"
-            />
+          <div className="hidden md:block w-full">
+            <DesktopHero />
           </div>
-        </button>
-      </div>
+          <div className="md:hidden w-full">
+            <MobileHero />
+          </div>
 
-      {/* About Me Section */}
-      <div ref={aboutRef} className="w-full pt-20">
-        <AboutMe />
-      </div>
+          <button
+            onClick={handleScrollToRef}
+            className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2"
+          >
+            <h6 className="text-primary">About me</h6>
+            <div className="flex justify-center w-fit">
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="text-primary text-2xl animate-bounce"
+              />
+            </div>
+          </button>
+        </div>
 
-      {/* Skills and Tech Section */}
-      <div ref={skillsRef} className="w-full pt-20">
-        <SkillsAndTech />
-      </div>
+        {/* About Me Section */}
+        <div ref={aboutRef} className="w-full pt-20">
+          <AboutMe />
+        </div>
 
-      {/* Experience Section */}
-      <div ref={experienceRef} className="w-full pt-20">
-        <Experience />
-      </div>
+        {/* Skills and Tech Section */}
+        <div ref={skillsRef} className="w-full pt-20">
+          <SkillsAndTech />
+        </div>
 
-      {/* Projects Section */}
-      <div ref={projectsRef} className="w-full pt-20">
-        <Projects projects={projects} />
+        {/* Experience Section */}
+        <div ref={experienceRef} className="w-full pt-20">
+          <Experience />
+        </div>
+
+        {/* Projects Section */}
+        <div ref={projectsRef} className="w-full pt-20">
+          <Projects projects={projects} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
