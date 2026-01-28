@@ -9,7 +9,7 @@ export default function ExperienceCard({ experienceItem }) {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div>
-      <div className="w-full justify-between flex flex-row items-start gap-2">
+      <button className="w-full justify-between flex flex-row items-start gap-2 text-start" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="flex flex-col md:flex-row justify-between md:gap-12 lg:gap-20 w-full">
           <div className="flex flex-col">
             <h5>
@@ -32,16 +32,15 @@ export default function ExperienceCard({ experienceItem }) {
           </div>
         </div>
 
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
+        <div
           className="flex items-center gap-1 text-accent mt-px md:mt-5 hover:text-primary transition-colors duration-300 h-fit"
         >
           <FontAwesomeIcon
             icon={faChevronDown}
             className={`transition-transform duration-300 ${isExpanded ? "transform rotate-180" : ""} text-2xl`}
           />
-        </button>
-      </div>
+        </div>
+      </button>
 
       <div
         className={`overflow-hidden transition-all duration-500 ${isExpanded ? "max-h-102" : "max-h-0"}`}
