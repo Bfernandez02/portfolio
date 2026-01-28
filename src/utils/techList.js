@@ -30,6 +30,12 @@ const featuredTechList = [
     level: "advanced",
   },
   {
+    name: "Java",
+    experience: 3,
+    category: "backend",
+    level: "advanced",
+  },
+  {
     name: "AWS",
     experience: 2,
     category: "tools",
@@ -73,6 +79,25 @@ const featuredTechList = [
   },
 ];
 
-const fullTechList = [...featuredTechList];
+const fullTechList = [...featuredTechList,
+  {
+    name: "Supabase",
+    experience: 3,
+    category: "backend",
+    level: "expert",
+  },
+  {
+    name: "Git",
+    experience: 4,
+    category: "tools",
+    level: "expert",
+  },
+  {
+    name: "Bash",
+    experience: 2,
+    category: "tools",
+    level: "intermediate",
+  },
+];
 
 export { fullTechList, featuredTechList };
