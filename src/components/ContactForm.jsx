@@ -192,7 +192,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={loading}
-              className="btn h-[48px] md:h-[50px] px-6 text-white md:w-auto w-full"
+              className="btn h-[48px] md:h-[50px] px-6 text-white md:w-auto w-full font-semibold"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
