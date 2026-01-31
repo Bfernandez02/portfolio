@@ -13,7 +13,6 @@ export default function ContactForm() {
     email: "",
     phone: "",
     company: "",
-    subject: "",
     message: "",
   });
 
@@ -23,7 +22,6 @@ export default function ContactForm() {
       email: "",
       phone: "",
       company: "",
-      subject: "",
       message: "",
     });
   };
@@ -38,30 +36,31 @@ export default function ContactForm() {
       return;
     }
 
-    try {
-      setLoading(true);
+    setLoading(true);
 
-      const response = await fetch("/api/contact_submission", {
+    toast.promise(
+      fetch("/api/contact_submission", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            resetForm();
+            return data;
+          } else {
+            throw new Error("Failed to send message");
+          }
+        }),
+      {
+        loading: "Sending message...",
+        success: "Message sent!",
+        error: "Something went wrong. Please try again.",
+      },
+    );
 
-      const data = await response.json();
-
-      if (data.success) {
-        toast.success("Message sent!", { position: "top-center" });
-        resetForm();
-      } else {
-        throw new Error();
-      }
-    } catch {
-      toast.error("Something went wrong. Please try again.", {
-        position: "top-center",
-      });
-    } finally {
-      setLoading(false);
-    }
+    setLoading(false);
   };
 
   return (
@@ -74,7 +73,6 @@ export default function ContactForm() {
           theme === "dark" ? "bg-popup" : "bg-primary"
         }`}
       >
-
         <header className="mb-6">
           <h2 id="contact-heading" className="font-semibold text-white!">
             Let&apos;s Chat!
@@ -186,7 +184,9 @@ export default function ContactForm() {
                 />
               </div>
 
-              <p className="font-semibold text-white! text-ellipsis overflow-hidden whitespace-nowrap px-2">bfernandezling@gmail.com</p>
+              <p className="font-semibold text-white! text-ellipsis overflow-hidden whitespace-nowrap px-2">
+                bfernandezling@gmail.com
+              </p>
             </div>
 
             <button

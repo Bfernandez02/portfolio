@@ -7,13 +7,7 @@ export default async function handler(req, res) {
       .json({ success: false, error: "Method not allowed" });
   }
 
-  const { name, email, phone, company, subject, message } = req.body;
-
-  if (!adminEmail) {
-    return res
-      .status(400)
-      .json({ success: false, error: "Admin email is required" });
-  }
+  const { name, email, phone, company, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -30,26 +24,23 @@ export default async function handler(req, res) {
   const userMailOptions = {
     from: "discoverlincoln3@gmail.com",
     to: process.env.NEXT_PUBLIC_EMAIL,
-    subject: `New Contact Submission, subject: ${subject}`,
-    text: `Hi ${name},
-
+    subject: `New Contact Submission from ${name}, company ${company}`,
+    text: `
 You have a new contact submission.
 
-Here is what you sent us:
+Here is what they sent:
 --------------------------------
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Company: ${company}
-Subject: ${subject}
 Message: ${message}
 --------------------------------
 `,
   };
 
   try {
-    // Send both emails in parallel
-    const [userInfo, adminInfo] = await transporter.sendMail(userMailOptions);
+    await transporter.sendMail(userMailOptions);
 
     return res.status(200).json({
       success: true,
