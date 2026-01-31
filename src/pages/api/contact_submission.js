@@ -7,8 +7,7 @@ export default async function handler(req, res) {
       .json({ success: false, error: "Method not allowed" });
   }
 
-  const { firstName, lastName, email, phone, message, adminEmail, role } =
-    req.body;
+  const { name, email, phone, company, subject, message } = req.body;
 
   if (!adminEmail) {
     return res
@@ -30,23 +29,22 @@ export default async function handler(req, res) {
   // Email 1: Confirmation to the user
   const userMailOptions = {
     from: "discoverlincoln3@gmail.com",
-    to: email,
-    subject: "Your message has been received",
-    text: `Hi ${firstName},
+    to: process.env.NEXT_PUBLIC_EMAIL,
+    subject: `New Contact Submission, subject: ${subject}`,
+    text: `Hi ${name},
 
-Thank you for reaching out! We have received your message and will get back to you shortly.
+You have a new contact submission.
 
 Here is what you sent us:
 --------------------------------
-Name: ${firstName} ${lastName}
+Name: ${name}
 Email: ${email}
 Phone: ${phone}
-Role: ${role}
+Company: ${company}
+Subject: ${subject}
 Message: ${message}
 --------------------------------
-
-Best regards,
-Downtown Grimsby BIA Team`,
+`,
   };
 
   try {
