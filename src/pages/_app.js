@@ -1,11 +1,12 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "@/styles/globals.css";
-import { ThemeButton } from "@/components/ThemeButton";
 import Navbar from "@/components/Navbar/Navbar";
+import { Toaster } from "react-hot-toast";
 
 function App({ Component, pageProps }) {
   return (
     <ThemeProvider>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="transition-colors duration-300">
         <Navbar />
       </div>
