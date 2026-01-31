@@ -9,6 +9,7 @@ import Projects from "@/components/Projects/Projects";
 import { getAllProjects } from "@/utils/projectLoader";
 import SkillsAndTech from "@/components/Skills/SkillsAndTech";
 import SEOHead from "@/components/SEOHead";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home({ projects }) {
   const aboutRef = useRef(null);
@@ -16,6 +17,7 @@ export default function Home({ projects }) {
   const projectsRef = useRef(null);
   const overviewRef = useRef(null);
   const skillsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const handleScrollToRef = () => {
     if (aboutRef.current) {
@@ -28,6 +30,7 @@ export default function Home({ projects }) {
     experience: experienceRef,
     projects: projectsRef,
     skills: skillsRef,
+    contact: contactRef,
   };
 
   const hash = window.location.hash.slice(1);
@@ -86,6 +89,10 @@ export default function Home({ projects }) {
         {/* Projects Section */}
         <div ref={projectsRef} className="w-full pt-20">
           <Projects projects={projects} />
+        </div>
+
+        <div ref={contactRef} className="w-full pt-20">
+          <ContactForm />
         </div>
       </div>
     </>

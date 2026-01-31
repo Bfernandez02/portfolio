@@ -204,4 +204,7 @@ h6 {
   .btn-alternate {
     @apply bg-none border-[1px] border-primary font-semibold text-primary px-3 py-2 lg:px-4 rounded-[10px] hover:bg-primary hover:text-white transition-all duration-300 text-[16px] lg:text-[18px] shadow-md;
   }
+  .basicInput {
+    @apply w-full border-[1px] border-border rounded-[10px] px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-all duration-300 bg-background text-[16px]! lg:text-[18px]! placeholder:text-[16px]! lg:placeholder:text-[18px]!;
+  }
 }
