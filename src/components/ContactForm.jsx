@@ -70,7 +70,7 @@ export default function ContactForm() {
       className="w-full flex justify-center"
     >
       <div
-        className={`w-full max-w-4xl rounded-xl shadow-2xl p-6 md:p-8 ${
+        className={`w-full max-w-5xl rounded-xl shadow-2xl p-4 md:p-8 lg:p-12 ${
           theme === "dark" ? "bg-popup" : "bg-primary"
         }`}
       >
