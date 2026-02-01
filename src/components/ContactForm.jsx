@@ -175,16 +175,20 @@ export default function ContactForm() {
 
           {/* Footer */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-2 text-secondary bg-background px-[6px] py-[6px] rounded-[10px]">
+            <div
+              className={`flex items-center gap-2 text-secondary px-[6px] py-[6px] rounded-[10px] ${theme === "dark" ? "bg-background" : "bg-[#244459]"} `}
+            >
               <span className="sr-only">Contact email</span>
-              <div className="rounded-[10px] bg-primary py-2 px-2 flex items-center justify-center">
+              <div
+                className={`rounded-[10px]  py-2 px-2 flex items-center justify-center ${theme === "dark" ? "bg-primary" : "bg-accent"}`}
+              >
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="text-white text-[20px] md:text-[22px]"
                 />
               </div>
 
-              <p className="font-semibold text-white! text-ellipsis overflow-hidden whitespace-nowrap px-2">
+              <p className="font-semibold text-white! text-[14px]! md:text-[16px]! text-ellipsis overflow-hidden whitespace-nowrap px-2">
                 bfernandezling@gmail.com
               </p>
             </div>
@@ -192,7 +196,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={loading}
-              className="btn h-[48px] md:h-[50px] px-6 text-white md:w-auto w-full font-semibold"
+              className={`h-[48px] md:h-[50px] px-6 text-white md:w-auto w-full font-semibold ${theme === "dark" ? "btn" : "btn-accent"} `}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
