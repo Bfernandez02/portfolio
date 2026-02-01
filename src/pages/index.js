@@ -59,13 +59,13 @@ export default function Home({ projects }) {
 
           <button
             onClick={handleScrollToRef}
-            className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2"
+            className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2 hover:text-accent! transition-colors duration-300 group"
           >
-            <h6 className="text-primary">About me</h6>
+            <h6 className="text-primary group-hover:text-accent!">About me</h6>
             <div className="flex justify-center w-fit">
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className="text-primary text-2xl animate-bounce"
+                className="text-primary text-2xl animate-bounce group-hover:text-accent!"
               />
             </div>
           </button>
