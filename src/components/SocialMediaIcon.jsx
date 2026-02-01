@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function SocialMediaIcon({ icon, textSize = 'text-4xl', url = '#', color = 'text-primary' }) {
   return (
-    <Link href={url} className={`${textSize} ${color} flex p-0`}>
+    <Link href={url} className={`${textSize} ${color} flex p-0 w-fit h-fit`}>
       <FontAwesomeIcon icon={icon} />
     </Link>
   )

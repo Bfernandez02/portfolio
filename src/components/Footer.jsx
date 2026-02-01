@@ -18,9 +18,9 @@ export default function Footer() {
     <div
       className={`${theme === "dark" ? "bg-border" : "bg-primary"} text-white! py-6 border-t-2 border-border flex justify-center flex-col w-full px-7 sm:px-10 md:px-15 lg:px-30 items-start gap-4`}
     >
-      <div className="w-full flex flex-col lg:flex-row py-6">
+      <div className="w-full flex flex-col md:flex-row py-6 gap-8 md:gap-4">
         {/* Left Content */}
-        <div className="flex flex-col gap-4 w-1/3">
+        <div className="flex flex-col gap-4 w-full md:w-1/3">
           <div className="flex flex-col gap-2 w-fit">
             <h5>Brandon Fernandez</h5>
             <p className="text-white!">
@@ -38,11 +38,11 @@ export default function Footer() {
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  className="text-white text-[20px] md:text-[22px]"
+                  className="text-white text-[18px] md:text-[22px]"
                 />
               </div>
 
-              <p className="font-semibold text-white! text-ellipsis overflow-hidden whitespace-nowrap px-2">
+              <p className="font-semibold text-white! text-[14px]! md:text-[16px]! text-ellipsis overflow-hidden whitespace-nowrap md:px-2">
                 bfernandezling@gmail.com
               </p>
             </div>
@@ -55,19 +55,19 @@ export default function Footer() {
               >
                 <FontAwesomeIcon
                   icon={faMapPin}
-                  className="text-white text-[20px] md:text-[22px]"
+                  className="text-white text-[18px] md:text-[22px]"
                 />
               </div>
 
-              <p className="font-semibold text-white! text-ellipsis overflow-hidden whitespace-nowrap px-2">
-                St. Catharines, Ontario, Canada
+              <p className="font-semibold text-white! text-[14px]! md:text-[16px]! text-ellipsis overflow-hidden whitespace-nowrap md:px-2">
+                St. Catharines, ON, Canada
               </p>
             </div>
           </div>
         </div>
 
         {/* Middle Content */}
-        <div className="w-1/3 flex flex-col items-center">
+        <div className="w-full md:w-1/3 flex flex-col md:items-center">
           <div className="flex flex-col gap-2 w-fit">
             <h5>Quick Links</h5>
             {menuItems.map((item, index) => {
@@ -90,39 +90,39 @@ export default function Footer() {
         </div>
 
         {/* Right Content */}
-        <div className="flex flex-col w-1/3 items-start h-full justify-start ">
+        <div className="flex flex-col w-full md:w-1/3 items-start h-full justify-start ">
           <div className="flex flex-col gap-2 h-full">
             <h5>Connect With Me</h5>
             <p className="w-full h-fit text-white!">
               Let&apos;s connect and create something amazing together
             </p>
           </div>
-          <div className="w-full flex flex-row gap-2 md:gap-4 mt-2 lg:mt-4 h-full ml-[-6px] lg:ml-[-8px]">
+          <div className="w-full flex flex-row gap-1 md:gap-2 mt-2 lg:mt-4 h-full ml-[-6px] lg:ml-[-8px]">
             <SocialMediaIcon
               icon={faSquareLinkedin}
               url=""
-              textSize={`text-[30px] lg:text-[36px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
+              textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareGithub}
               url=""
-              textSize={`text-[30px] lg:text-[36px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
+              textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareInstagram}
               url=""
-              textSize={`text-[30px] lg:text-[36px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
+              textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareFacebook}
               url=""
-              textSize={`text-[30px] lg:text-[36px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
+              textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
           </div>
         </div>
       </div>
 
-      <div className="w-full border-t-2 border-white/5 pt-4 flex flex-col lg:flex-row justify-between items-center">
+      <div className="w-full border-t-2 border-white/5 pt-4 flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-0">
         <p className="text-white! text-sm! ">
           &copy; {new Date().getFullYear()} Brandon Fernandez. All rights
           reserved.

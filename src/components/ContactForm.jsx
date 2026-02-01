@@ -173,7 +173,6 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Footer */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div
               className={`flex items-center gap-2 text-secondary px-[6px] py-[6px] rounded-[10px] ${theme === "dark" ? "bg-background" : "bg-[#244459]"} `}
@@ -184,7 +183,7 @@ export default function ContactForm() {
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  className="text-white text-[20px] md:text-[22px]"
+                  className="text-white text-[18px] md:text-[22px]"
                 />
               </div>
 
