@@ -51,7 +51,7 @@ export default function MobileNav({ menuItems }) {
       <div
         className={`flex lex-row transition-all justify-between border-y-2 border-border py-4 px-3 w-full ${
           scrolled
-            ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary"} border-b  px-5 `
+            ? `${theme == "dark" ? "bg-border border-border" : "bg-primary border-primary"} border-b  px-5 `
             : "mx-5 my-5"
         }`}
       >
