@@ -3,6 +3,7 @@ import projectCategories from "@/utils/ProjectUtils";
 import { useState } from "react";
 import TechStackMultiSelect from "./TechStackMultiSelect";
 import ProjectCard from "./ProjectCard";
+import { toast } from "react-hot-toast";
 import ProjectModal from "./ProjectModal";
 
 export default function Projects({ projects }) {
@@ -41,11 +42,12 @@ export default function Projects({ projects }) {
           </button>
         ))}
 
-        <div className="w-full max-w-[205px] z-70">
+        <div className="w-fit z-70">
           <TechStackMultiSelect
             value={filters.techStack}
             onChange={(selected) =>
-              setFilters({ ...filters, techStack: selected })
+              selected.length < 6 ?
+              setFilters({ ...filters, techStack: selected }) : toast.error("You can select up to 5 technologies only!", { duration: 4000 , id: "techStackLimit"})
             }
           />
         </div>
