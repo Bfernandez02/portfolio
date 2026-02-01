@@ -91,7 +91,7 @@ export default function Home({ projects }) {
           <Projects projects={projects} />
         </div>
 
-        <div ref={contactRef} className="w-full pt-20">
+        <div ref={contactRef} className="w-full py-20">
           <ContactForm />
         </div>
       </div>

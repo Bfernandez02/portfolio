@@ -33,7 +33,7 @@ export default function DesktopNav({ menuItems }) {
         <div
           className={` flex flex-row transition-all justify-between border-y-2 border-border px-5 py-6 ${
             scrolled
-              ? `${theme == "dark" ? "bg-popup border-popup" : "bg-primary border-primary border-t-primary border-b-black"} border-b  px-10`
+              ? `${theme == "dark" ? "bg-border border-border" : "bg-primary border-primary border-t-primary border-b-black"} border-b  px-10`
               : "mx-10"
           }`}
         >

@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 function App({ Component, pageProps }) {
   return (
@@ -14,6 +15,7 @@ function App({ Component, pageProps }) {
       <div className="min-h-screen transition-colors duration-300">
         <Component {...pageProps} />
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }
