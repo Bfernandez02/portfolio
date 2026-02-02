@@ -16,29 +16,28 @@ export default function SEOHead() {
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://brandonhfernandez.com/" />
+      <meta property="og:url" content="https://fernandez-code.netlify.app/" />
       <meta property="og:title" content="Brandon Fernandez - Software Developer & Web Development Specialist" />
       <meta 
         property="og:description" 
         content="Portfolio of Brandon Fernandez, a passionate software developer and web development specialist based in Ontario. Explore professional work, AI experiments, and personal projects." 
       />
-      <meta property="og:image" content="https://brandonhfernandez.com/headshot.jpg" />
+      <meta property="og:image" content="https://fernandez-code.netlify.app/thumbnail.png" />
       <meta property="og:site_name" content="Brandon Fernandez Portfolio" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://brandonhfernandez.com/" />
+      <meta property="twitter:url" content="https://fernandez-code.netlify.app/" />
       <meta property="twitter:title" content="Brandon Fernandez - Software Developer & Web Development Specialist" />
       <meta 
         property="twitter:description" 
         content="Portfolio of Brandon Fernandez, a passionate software developer and web development specialist based in Ontario. Explore professional work, AI experiments, and personal projects." 
       />
-      <meta property="twitter:image" content="https://brandonhfernandez.com/headshot.jpg" />
+      <meta property="twitter:image" content="https://fernandez-code.netlify.app/thumbnail.png" />
 
       {/* Canonical URL */}
-      <link rel="canonical" href="https://brandonhfernandez.com/" />
-
+      <link rel="canonical" href="https://fernandez-code.netlify.app/" />
       {/* Additional Meta Tags */}
       <meta name="theme-color" content="#000000" />
       <meta name="format-detection" content="telephone=no" />
@@ -53,8 +52,8 @@ export default function SEOHead() {
             "name": "Brandon Fernandez",
             "jobTitle": "Software Developer & Web Development Specialist",
             "description": "Passionate software developer with expertise in fullstack development, AI research, and computer science",
-            "url": "https://brandonhfernandez.com",
-            "image": "https://brandonhfernandez.com/headshot.jpg",
+            "url": "https://fernandez-code.netlify.app",
+            "image": "https://fernandez-code.netlify.app/thumbnail.png",
             "address": {
               "@type": "PostalAddress",
               "addressRegion": "Ontario",
