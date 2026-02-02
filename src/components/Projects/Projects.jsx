@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import projectCategories from "@/utils/ProjectUtils";
 import { useState, useMemo } from "react";
 import TechStackMultiSelect from "./TechStackMultiSelect";
@@ -9,25 +9,34 @@ import ProjectModal from "./ProjectModal";
 export default function Projects({ projects }) {
   const [filters, setFilters] = useState({
     category: "All",
-    techStack: null,
+    techStack: [],
+    techMode: "OR", // "OR" | "AND"
   });
-
   const [activeProject, setActiveProject] = useState(null);
 
   const filteredProjects = useMemo(() => {
-    let updatedProjects = projects;
+    let filtered = projects;
+    // Category filter
     if (filters.category !== "All") {
-      updatedProjects = updatedProjects.filter(
+      filtered = filtered.filter(
         (project) => project.category === filters.category,
       );
     }
-    if (filters.techStack && filters.techStack.length > 0) {
-      updatedProjects = updatedProjects.filter((project) =>
-        filters.techStack.every((tech) => project.tech.includes(tech)),
-      );
+
+    // Tech stack filter
+    if (filters.techStack?.length) {
+      const selectedTechs = filters.techStack.map((t) => t.value);
+
+      filtered = filtered.filter((project) => {
+        if (filters.techMode === "AND") {
+          return selectedTechs.every((tech) => project.tech.includes(tech));
+        }
+        return selectedTechs.some((tech) => project.tech.includes(tech));
+      });
     }
-    return updatedProjects;
-  }, [filters, projects]);
+
+    return filtered;
+  }, [projects, filters]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
