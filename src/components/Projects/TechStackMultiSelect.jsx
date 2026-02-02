@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Select from "react-select";
 import { fullTechList } from "@/utils/techList";
+import { useTheme } from "../ThemeProvider";
 
 const techOptions = fullTechList.map((tech) => ({
   value: tech.name,
@@ -9,10 +10,28 @@ const techOptions = fullTechList.map((tech) => ({
   logo: `/TechLogos/${tech.name}.png`,
 }));
 
+const colours = {
+  light: {
+    background: "#ffffff",
+    text: "#000000",
+    border: "#d1d5db",
+    hoverBackground: "#f3f4f6",
+  },
+  dark: {
+    background: "#282a36",
+    text: "#ffffff",
+    border: "#374151",
+    hoverBackground: "#161616",
+  },
+};
+
 export default function TechStackMultiSelect({
   value,
   onChange,
 }) {
+  const { theme } = useTheme();
+
+
   return (
     <Select
       isMulti
@@ -35,37 +54,50 @@ export default function TechStackMultiSelect({
         </div>
       )}
       styles={{
+        input: (base) => ({
+          ...base,
+          color: 'white',
+        }),
+        placeholder: (base) => ({
+          ...base,
+          color: 'white',
+        }),
         control: (base, state) => ({
           ...base,
           borderRadius: "6px",
           borderWidth: "2px",
-          padding: "0.25rem",
-          borderColor: state.isFocused ? "black" : "#d1d5db",
-          boxShadow: state.isFocused ? "0 0 0 1px black" : "none",
+          padding: "0.35rem",
+          borderRadius: "10px",
+          backgroundColor: "#ca054d",
+          borderColor: state.isFocused ? colours[theme].border : "#ca054d",
+          boxShadow: state.isFocused ? "0 0 0 1px #ca054d" : "none",
           "&:hover": {
-            borderColor: "black",
+            borderColor: "#ca054d",
           },
+          color: "white",
           zIndex: 60,
         }),
         option: (base, state) => ({
           ...base,
-          backgroundColor: state.isFocused ? "#f3f4f6" : "white",
-          color: "black",
+          marginTop: "-4px",
+          marginBottom: "-4px",
+          backgroundColor: state.isFocused ? colours[theme].hoverBackground : colours[theme].background,
+          color: colours[theme].text,
           cursor: "pointer",
         }),
         multiValue: (base) => ({
           ...base,
-          backgroundColor: "#f3f4f6",
+          backgroundColor: "#B10041",
         }),
         multiValueLabel: (base) => ({
           ...base,
-          color: "#111827",
+          color: "white",
         }),
         multiValueRemove: (base) => ({
           ...base,
           cursor: "pointer",
           ":hover": {
-            backgroundColor: "#e5e7eb",
+            backgroundColor: "#B10041",
             color: "black",
           },
         }),

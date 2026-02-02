@@ -64,7 +64,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section
+    <div
       aria-labelledby="contact-heading"
       className="w-full flex justify-center"
     >
@@ -202,6 +202,6 @@ export default function ContactForm() {
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 }
