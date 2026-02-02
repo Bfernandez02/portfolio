@@ -30,7 +30,7 @@ const experienceList = [
   {
     role: "Full Stack - Web Developer Team Lead",
     company: "Civiconnect",
-    duration: "May 2025 - Present",
+    duration: "Dec 2023 - May 2025",
     location: "Beamsville, ON",
     details: [
       "Participated in the creation of the client's recruitment software, employing JSX/Typescript, HTML5, Tailwind CSS, React, Next.JS, PostgreSQL, Supabase, Strapi, and REST APIs.",

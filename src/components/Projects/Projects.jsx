@@ -98,12 +98,12 @@ export default function Projects({ projects }) {
           )}
         </div>
 
-        {/* {activeProject && (
+        {activeProject && (
           <ProjectModal
             project={activeProject}
             onClose={() => setActiveProject(null)}
           />
-        )} */}
+        )}
       </>
     </div>
   );

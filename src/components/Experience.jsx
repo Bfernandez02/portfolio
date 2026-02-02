@@ -10,7 +10,6 @@ export default function Experience() {
       {/* Experience Header */}
       <div className="w-full flex flex-col md:flex-row gap-2 md:gap-[20%] justify-between items-center">
         <div className="flex flex-col gap-2 w-full">
-          <h5 className="list-item list-inside">Experience</h5>
           <h2>Explore my development journey</h2>
         </div>
 
