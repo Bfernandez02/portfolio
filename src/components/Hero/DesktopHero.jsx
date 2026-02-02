@@ -63,32 +63,32 @@ export default function DesktopHero() {
           <div className="grid grid-cols-2 xl:grid-cols-3 w-[30%] gap-2 text-primary h-full">
             <SocialMediaIcon
               icon={faSquareLinkedin}
-              url=""
+              url="Linkedin"
               textSize="text-[40px] xl:text-[52px]"
             />
             <SocialMediaIcon
               icon={faSquareFigma}
-              url=""
+              url="Figma"
               textSize="text-[40px] xl:text-[52px]"
             />
             <SocialMediaIcon
               icon={faSquareGithub}
-              url=""
+              url="Github"
               textSize="text-[40px] xl:text-[52px]"
             />
             <SocialMediaIcon
               icon={faSquareInstagram}
-              url=""
+              url="Instagram"
               textSize="text-[40px] xl:text-[52px]"
             />
             <SocialMediaIcon
               icon={faSquareFacebook}
-              url=""
+              url="Facebook"
               textSize="text-[40px] xl:text-[52px]"
             />
             <SocialMediaIcon
               icon={faSquareEnvelope}
-              url=""
+              url="Email"
               textSize="text-[40px] xl:text-[52px]"
             />
           </div>

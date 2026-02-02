@@ -29,12 +29,12 @@ export default function MobileHero() {
         />
         <div>
           <div className="flex w-full justify-between mt-4 text-4xl text-primary">
-            <SocialMediaIcon icon={faSquareLinkedin} url="" />
-            <SocialMediaIcon icon={faSquareFigma} url="" />
-            <SocialMediaIcon icon={faSquareGithub} url="" />
-            <SocialMediaIcon icon={faSquareInstagram} url="" />
-            <SocialMediaIcon icon={faSquareFacebook} url="" />
-            <SocialMediaIcon icon={faSquareEnvelope} url="" />
+            <SocialMediaIcon icon={faSquareLinkedin} url="Linkedin" />
+            <SocialMediaIcon icon={faSquareFigma} url="Figma" />
+            <SocialMediaIcon icon={faSquareGithub} url="Github" />
+            <SocialMediaIcon icon={faSquareInstagram} url="Instagram" />
+            <SocialMediaIcon icon={faSquareFacebook} url="Facebook" />
+            <SocialMediaIcon icon={faSquareEnvelope} url="Email" />
           </div>
         </div>
       </div>

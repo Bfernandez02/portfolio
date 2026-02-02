@@ -10,6 +10,7 @@ import {
   faSquareInstagram,
   faSquareLinkedin,
   faSquareFacebook,
+  faSquareFigma,
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
@@ -100,22 +101,27 @@ export default function Footer() {
           <div className="w-full flex flex-row gap-1 md:gap-2 mt-2 lg:mt-4 h-full ml-[-6px] lg:ml-[-8px]">
             <SocialMediaIcon
               icon={faSquareLinkedin}
-              url=""
+              url="Linkedin"
+              textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
+            />
+            <SocialMediaIcon
+              icon={faSquareFigma}
+              url="Figma"
               textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareGithub}
-              url=""
+              url="Github"
               textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareInstagram}
-              url=""
+              url="Instagram"
               textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
             <SocialMediaIcon
               icon={faSquareFacebook}
-              url=""
+              url="Facebook"
               textSize={`text-[34px] lg:text-[38px] xl:text-[42px] ${theme === "dark" ? "text-primary!" : "text-accent!"}`}
             />
           </div>
