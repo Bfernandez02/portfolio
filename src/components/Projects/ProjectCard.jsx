@@ -10,7 +10,7 @@ export default function ProjectCard({ project, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="text-left rounded-[10px] hover:scale-103 transition-all duration-300 bg-popup flex flex-col not-even:shadow-md w-full"
+      className="text-left rounded-[10px] hover:scale-103 transition-all duration-300 bg-popup flex flex-col not-even:shadow-md w-full h-full"
     >
       <div className="w-full h-[200px] overflow-hidden rounded-t-[10px] relative">
         <Image
@@ -54,16 +54,15 @@ export default function ProjectCard({ project, onClick }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-4 w-full">
+      <div className="flex flex-col p-4 w-full h-fit gap-2 justify-between">
         <h6 className="font-semibold">{title}</h6>
-
         <p className="">
           {excerpt.length > 200 ? excerpt.substring(0, 200) + "..." : excerpt}
         </p>
+      </div>
 
-        <div className="w-full">
-          <TechCarousel tech={tech} />
-        </div>
+      <div className="w-full mt-auto px-4 pb-4">
+        <TechCarousel tech={tech} />
       </div>
     </button>
   );
