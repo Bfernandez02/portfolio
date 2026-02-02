@@ -18,8 +18,8 @@ export default function Projects({ projects }) {
     let filtered = projects;
     // Category filter
     if (filters.category !== "All") {
-      filtered = filtered.filter(
-        (project) => project.category === filters.category,
+      filtered = filtered.filter((project) =>
+        project.categories.includes(filters.category),
       );
     }
 

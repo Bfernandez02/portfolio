@@ -19,6 +19,8 @@ export default function SocialMediaIcon({
   return (
     <Link
       href={links[url]}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`${textSize} ${color} flex p-0 w-fit h-fit`}
     >
       <FontAwesomeIcon icon={icon} />

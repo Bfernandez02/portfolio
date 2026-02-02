@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroText() {
+  const openResume = () => {
+    window.open("/resume.pdf", "_blank");
+  };
   return (
     <div>
       {" "}
@@ -20,7 +23,7 @@ export default function HeroText() {
           software development.
         </p>
 
-        <button className="btn w-fit mt-2">
+        <button className="btn w-fit mt-2" onClick={openResume}>
           {" "}
           <FontAwesomeIcon icon={faDownload} /> Download Resume
         </button>

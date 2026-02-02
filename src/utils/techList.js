@@ -77,6 +77,12 @@ const featuredTechList = [
     category: "frontend",
     level: "expert",
   },
+  {
+    name: "Figma",
+    experience: 3,
+    category: "tools",
+    level: "advanced",
+  }
 ];
 
 const fullTechList = [...featuredTechList,
