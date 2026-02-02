@@ -57,7 +57,9 @@ export default function ContactForm() {
         loading: "Sending message...",
         success: "Message sent!",
         error: "Something went wrong. Please try again.",
-      },
+      }
+      ,
+      {id: "contact-form-toast"}
     );
 
     setLoading(false);
