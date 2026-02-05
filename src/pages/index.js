@@ -10,6 +10,7 @@ import { getAllProjects } from "@/utils/projectLoader";
 import SkillsAndTech from "@/components/Skills/SkillsAndTech";
 import SEOHead from "@/components/SEOHead";
 import ContactForm from "@/components/ContactForm";
+import { motion } from "framer-motion";
 
 export default function Home({ projects }) {
   const aboutRef = useRef(null);
@@ -34,12 +35,19 @@ export default function Home({ projects }) {
   };
 
   const hash = window.location.hash.slice(1);
-
   useEffect(() => {
     if (hash && refs[hash]) {
-      refs[hash].current?.scrollIntoView({ behavior: "smooth" });
+      const element = refs[hash].current;
+      if (element) {
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - 40,
+          behavior: "smooth",
+        });
+      }
     }
-  }, [hash]);
+  }, [hash, refs]);
 
   return (
     <>
@@ -57,18 +65,29 @@ export default function Home({ projects }) {
             <MobileHero />
           </div>
 
-          <button
-            onClick={handleScrollToRef}
-            className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2 hover:text-accent! transition-colors duration-300 group"
+          <motion.div
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            animate={{ opacity: 1 }}
+            className="w-full flex justify-center"
           >
-            <h6 className="text-primary group-hover:text-accent!">About me</h6>
-            <div className="flex justify-center w-fit">
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="text-primary text-2xl animate-bounce group-hover:text-accent!"
-              />
-            </div>
-          </button>
+            <motion.button
+              onClick={handleScrollToRef}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-fit flex flex-col items-center justify-between gap-3 mb-6 mt-2 hover:text-accent! transition-colors duration-300 group"
+            >
+              <h6 className="text-primary group-hover:text-accent!">
+                About me
+              </h6>
+              <div className="flex justify-center w-fit">
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  className="text-primary text-2xl  group-hover:text-accent!"
+                />
+              </div>
+            </motion.button>
+          </motion.div>
         </div>
 
         {/* About Me Section */}
@@ -82,16 +101,25 @@ export default function Home({ projects }) {
         </div>
 
         {/* Experience Section */}
-        <div ref={experienceRef} className="w-full pt-20">
+        <div
+          ref={experienceRef}
+          className="w-full pt-20"
+        >
           <Experience />
         </div>
 
         {/* Projects Section */}
-        <div ref={projectsRef} className="w-full pt-20">
+        <div
+          ref={projectsRef}
+          className="w-full pt-20"
+        >
           <Projects projects={projects} />
         </div>
 
-        <div ref={contactRef} className="w-full py-20">
+        <div
+          ref={contactRef}
+          className="w-full py-20"
+        >
           <ContactForm />
         </div>
       </div>

@@ -1,15 +1,34 @@
-import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "./ThemeProvider";
+import { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
-export default function ExperienceCard({ experienceItem }) {
+export default function ExperienceCard({ experienceItem, useBorder }) {
   const { theme } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 0px 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) controls.start("visible");
+  }, [isInView, controls]);
   return (
-    <div>
-      <button className="w-full justify-between flex flex-row items-start gap-2 text-start" onClick={() => setIsExpanded(!isExpanded)}>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={controls}
+      transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+      variants={{ visible: { opacity: 1, y: 0 } }}
+      className={`${useBorder ? "border-b-border border-b-2 pb-4 md:pb-8" : ""}`}
+    >
+      <button
+        className="w-full justify-between flex flex-row items-start gap-2 text-start"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         <div className="flex flex-col md:flex-row justify-between md:gap-12 lg:gap-20 w-full">
           <div className="flex flex-col">
             <h5>
@@ -32,9 +51,7 @@ export default function ExperienceCard({ experienceItem }) {
           </div>
         </div>
 
-        <div
-          className="flex items-center gap-1 text-accent mt-px md:mt-5 hover:text-primary transition-colors duration-300 h-fit"
-        >
+        <div className="flex items-center gap-1 text-accent mt-px md:mt-5 hover:text-primary transition-colors duration-300 h-fit">
           <FontAwesomeIcon
             icon={faChevronDown}
             className={`transition-transform duration-300 ${isExpanded ? "transform rotate-180" : ""} text-2xl`}
@@ -56,6 +73,6 @@ export default function ExperienceCard({ experienceItem }) {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }

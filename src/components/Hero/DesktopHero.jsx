@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareLinkedin,
   faSquareFigma,
@@ -16,17 +14,29 @@ import TechIcon from "../TechIcon.jsx";
 import BrandsCarousel from "../BrandsCarousel.jsx";
 import HeroText from "./HeroText.jsx";
 import HeroStats from "./HeroStats.jsx";
+import { motion } from "framer-motion";
 
 export default function DesktopHero() {
   return (
     <div className="lg:mt-44 mt-36 flex flex-col md:flex-row gap-4 lg:gap-14 items-center md:items-start w-full">
-      <div className="px-5 w-[50%] h-full flex flex-col justify-between">
+
+      <motion.div 
+        className="px-5 w-[50%] h-full flex flex-col justify-between"
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <HeroText />
         <div className="mt-8 h-fit w-full">
           <HeroStats />
         </div>
-      </div>
-      <div className="flex flex-col gap-8 w-[50%]">
+      </motion.div>
+      <motion.div 
+        className="flex flex-col gap-8 w-[50%]"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="w-full flex">
           <div className="w-[50%]">
             <Image
@@ -54,7 +64,7 @@ export default function DesktopHero() {
           </div>
         </div>
         <div className="w-full flex-row xl:gap-6 gap-4 flex">
-          <div className="w-[70%] bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4 ">
+          <div className="w-[70%] bg-primary rounded-[10px] px-5 py-2.5 flex flex-col gap-4 ">
             <h6 className="text-white!">Brands I have worked with</h6>
             <div className="mt-2 ">
               <BrandsCarousel />
@@ -93,7 +103,7 @@ export default function DesktopHero() {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
