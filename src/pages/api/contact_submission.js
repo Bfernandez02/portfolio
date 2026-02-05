@@ -16,14 +16,14 @@ export default async function handler(req, res) {
     secure: true,
     auth: {
       user: "discoverlincoln3@gmail.com",
-      pass: process.env.NEXT_PUBLIC_EMAIL_SERVICE,
+      pass: process.env.EMAIL_SERVICE,
     },
   });
 
   // Email 1: Confirmation to the user
   const userMailOptions = {
     from: "discoverlincoln3@gmail.com",
-    to: process.env.NEXT_PUBLIC_EMAIL,
+    to: process.env.EMAIL,
     subject: `New Contact Submission from ${name}, company ${company}`,
     text: `
 You have a new contact submission.
