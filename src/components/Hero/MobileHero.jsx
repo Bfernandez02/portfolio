@@ -1,7 +1,5 @@
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareLinkedin,
   faSquareFigma,
@@ -15,11 +13,35 @@ import { featuredTechList } from "@/utils/techList.js";
 import TechIcon from "../TechIcon.jsx";
 import BrandsCarousel from "../BrandsCarousel.jsx";
 import HeroText from "./HeroText.jsx";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function MobileHero() {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const isInView2 = useInView(ref2, {
+    once: true,
+    margin: "0px 0px -200px 0px",
+  });
+  const controls = useAnimation();
+  const controls2 = useAnimation();
+
+  useEffect(() => {
+    if (isInView) controls.start("visible");
+  }, [isInView, controls]);
+  useEffect(() => {
+    if (isInView2) controls2.start("visible");
+  }, [isInView2, controls2]);
   return (
     <div className="mt-22 py-10 flex flex-col md:flex-row gap-10 items-center md:items-start w-full">
-      <div className="px-5">
+      <motion.div
+        ref={ref}
+        className="px-5"
+        initial={{ opacity: 0, y: 60 }}
+        animate={controls}
+        transition={{ duration: 0.8 }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
+      >
         <Image
           src="/headshot.jpg"
           alt="Hero Image"
@@ -37,13 +59,26 @@ export default function MobileHero() {
             <SocialMediaIcon icon={faSquareEnvelope} url="Email" />
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-8 w-full">
-        <div className="w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={controls}
+          transition={{ duration: 0.8 }}
+          variants={{ visible: { opacity: 1, y: 0 } }}
+          className="w-full"
+        >
           <HeroText />
-        </div>
+        </motion.div>
 
-        <div className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full">
+        <motion.div
+          ref={ref2}
+          initial={{ opacity: 0, y: 60 }}
+          animate={controls2}
+          transition={{ duration: 0.8 }}
+          variants={{ visible: { opacity: 1, y: 0 } }}
+          className=" bg-popup rounded-[10px] px-5 py-[10px] flex flex-col gap-4 w-full"
+        >
           <h6>Main Technologies</h6>
           <div className="w-full flex flex-wrap gap-6 mt-2 items-center justify-center ">
             {featuredTechList.map((tech, index) => (
@@ -57,14 +92,20 @@ export default function MobileHero() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="w-full bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={controls2}
+          transition={{ duration: 0.8 }}
+          variants={{ visible: { opacity: 1, y: 0 } }}
+          className="w-full bg-primary rounded-[10px] px-5 py-[10px] flex flex-col gap-4"
+        >
           <h6>Brands I have worked with</h6>
           <div className="mt-2 w-full">
             <BrandsCarousel />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

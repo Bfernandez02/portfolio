@@ -21,14 +21,10 @@ export default function AboutMe() {
       ref={ref}
     >
       <motion.div
-        className="w-fit"
-        controls={controls}
-        initial="hidden"
+        initial={{ opacity: 0, y: 60 }}
         animate={controls}
-        variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
       >
         <Image
           src={`/Brandon_${theme}.png`}
@@ -43,7 +39,7 @@ export default function AboutMe() {
         className="flex flex-col gap-8 w-full"
         initial={{ opacity: 0, y: 60 }}
         animate={controls}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         variants={{ visible: { opacity: 1, y: 0 } }}
       >
         <div className="flex gap-4 xl:gap-12 sm:flex-row flex-col w-full justify-center">

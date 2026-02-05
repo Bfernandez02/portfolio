@@ -65,8 +65,8 @@ export default function MobileNav({ menuItems }) {
       </div>
 
       <div
-        className={`fixed z-20 bg-popup h-screen shadow-lg pl-3 pr-8 overflow-auto justify-between transform transition-transform duration-300 text-primary  ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed z-20 bg-popup max-w-[90vw] h-screen shadow-lg pl-3 pr-8 overflow-auto justify-between transform transition-transform duration-300 text-primary  ${
+          isMenuOpen ? "translate-x-[10%]" : "translate-x-full"
         }`}
         style={{
           borderRadius: "20px 0px 0px 20px",
@@ -101,7 +101,7 @@ export default function MobileNav({ menuItems }) {
               <ThemeButton />
             </div>
           </div>
-          <p className="text-[14px] text-left text-secondary mt-[40vh]">
+          <p className="text-[14px] text-left text-secondary mt-[30vh]">
             @ 2026 - Designed & Developed by Brandon Fernandez
           </p>
         </div>
