@@ -1,10 +1,10 @@
-import React, { use } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import projectCategories from "@/utils/ProjectUtils";
-import { useState, useMemo } from "react";
 import TechStackMultiSelect from "./TechStackMultiSelect";
 import ProjectCard from "./ProjectCard";
 import { toast } from "react-hot-toast";
 import ProjectModal from "./ProjectModal";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function Projects({ projects }) {
   const [filters, setFilters] = useState({
@@ -38,17 +38,38 @@ export default function Projects({ projects }) {
     return filtered;
   }, [projects, filters]);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) controls.start("visible");
+  }, [isInView, controls]);
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="w-full flex flex-col items-center justify-center gap-5 mb-8 max-w-[80%] text-center">
+      <motion.div
+        ref={ref}
+        className="w-full flex flex-col items-center justify-center gap-5 mb-8 max-w-[80%] text-center"
+        initial={{ opacity: 0, y: 60 }}
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
+      >
         <h2 className="w-fit">Projects</h2>
         <p>
           These are some of the projects I have worked on, categorized by their
           type and technologies used.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="w-full flex flex-wrap items-center justify-center gap-4">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
+        className="w-full flex flex-wrap items-center justify-center gap-4"
+      >
         {projectCategories.map((category) => (
           <button
             key={category}
@@ -79,10 +100,15 @@ export default function Projects({ projects }) {
             }
           />
         </div>
-      </div>
+      </motion.div>
 
       <>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center md:gap-6 gap-4 mt-8">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+        variants={{ visible: { opacity: 1, y: 0 } }}
+        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center md:gap-6 gap-4 mt-8">
           {filteredProjects.length === 0 ? (
             <h3 className="text-center col-span-full min-h-[400px]">
               More projects coming soon!
@@ -96,7 +122,7 @@ export default function Projects({ projects }) {
               />
             ))
           )}
-        </div>
+        </motion.div>
 
         {/* {activeProject && (
           <ProjectModal

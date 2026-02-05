@@ -3,6 +3,8 @@ import toast from "react-hot-toast";
 import { useTheme } from "./ThemeProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export default function ContactForm() {
   const { theme } = useTheme();
@@ -57,20 +59,32 @@ export default function ContactForm() {
         loading: "Sending message...",
         success: "Message sent!",
         error: "Something went wrong. Please try again.",
-      }
-      ,
-      {id: "contact-form-toast"}
+      },
+      { id: "contact-form-toast" },
     );
 
     setLoading(false);
   };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -40px 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) controls.start("visible");
+  }, [isInView, controls]);
 
   return (
     <div
       aria-labelledby="contact-heading"
       className="w-full flex justify-center"
     >
-      <div
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+        variants={{ visible: { opacity: 1 } }}
         className={`w-full max-w-5xl rounded-xl shadow-2xl p-4 md:p-8 lg:p-12 ${
           theme === "dark" ? "bg-popup" : "bg-primary"
         }`}
@@ -203,7 +217,7 @@ export default function ContactForm() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }
