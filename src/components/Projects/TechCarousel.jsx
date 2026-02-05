@@ -19,25 +19,48 @@ export default function TechCarousel({ tech }) {
   );
 
   return (
-    <div className="mt-1 w-full " ref={techRef}>
-      {/* Embla wrapper */}
-      <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex flex-row gap-2">
-          {repeated.map((techItem, idx) => (
-            <div key={idx} className="flex-none">
-              <TechIcon
-                key={idx}
-                tech={techItem}
-                width="w-[15px]"
-                height="h-[15px]"
-                vertical={false}
-                textSize="!text-[12px]"
-                className="border border-primary rounded-[10px] py-1 px-2"
-              />
-            </div>
-          ))}
+    <>
+
+    {
+      tech.length > 5 ? (
+      <div className="mt-1 w-full " ref={techRef}>
+        {/* Embla wrapper */}
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex flex-row gap-2">
+            {repeated.map((techItem, idx) => (
+              <div key={idx} className="flex-none">
+                <TechIcon
+                  key={idx}
+                  tech={techItem}
+                  width="w-[15px]"
+                  height="h-[15px]"
+                  vertical={false}
+                  textSize="!text-[12px]"
+                  className="border border-primary rounded-[10px] py-1 px-2"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      )
+      :
+      <div className="mt-1 w-full flex flex-row gap-2">
+        {tech.map((techItem, idx) => (
+          <div key={idx} className="flex-none">
+            <TechIcon
+              key={idx}
+              tech={techItem}
+              width="w-[15px]"
+              height="h-[15px]"
+              vertical={false}
+              textSize="!text-[12px]"
+              className="border border-primary rounded-[10px] py-1 px-2"
+            />
+          </div>
+        ))}
+      </div>
+    }
+    </>
   );
 }
