@@ -39,6 +39,9 @@ Message: ${message}
 `,
   };
 
+  console.log("EMAIL_USER exists:", !!process.env.EMAIL);
+  console.log("EMAIL_PASS exists:", !!process.env.EMAIL_SERVICE);
+
   try {
     await transporter.sendMail(userMailOptions);
 
